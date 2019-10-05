@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Dimensions, Animated } from 'react-native'
 import { actions } from '../../redux/actions'
 import { connect } from 'react-redux'
@@ -15,40 +15,34 @@ import {
 import { Input, Button } from '../../components'
 import PropTypes from 'prop-types'
 
-const { width, height } = Dimensions.get('window')
+const { height } = Dimensions.get('window')
 
-class LoginMenu extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      top: new Animated.Value(height),
-      topContent: new Animated.Value(height),
-      topIcon: new Animated.Value(height),
-      opacity: new Animated.Value(0)
-    }
-  }
+function LoginMenu({ showLoginModal, toggleLoginModal, type }) {
+  const [top, setTop] = useState(new Animated.Value(height))
+  const [topContent, setTopContent] = useState(new Animated.Value(height))
+  const [topIcon, setTopIcon] = useState(new Animated.Value(height))
+  const [opacity, setOpacity] = useState(new Animated.Value(0))
 
-  componentDidUpdate = () => {
-    this.animationModal()
-  }
+  useEffect(() => {
+    animationModal()
+  }, [showLoginModal])
 
-  animationModal = () => {
-    const { showLoginModal } = this.props
+  function animationModal() {
     if (showLoginModal) {
       Animated.sequence([
-        Animated.timing(this.state.opacity, {
+        Animated.timing(opacity, {
           toValue: 1,
           duration: 0
         }),
-        Animated.timing(this.state.top, {
+        Animated.timing(top, {
           toValue: 0,
           duration: 0
         }),
         Animated.parallel([
-          Animated.spring(this.state.topContent, {
+          Animated.spring(topContent, {
             toValue: 88
           }),
-          Animated.spring(this.state.topIcon, {
+          Animated.spring(topIcon, {
             toValue: 44
           })
         ])
@@ -56,21 +50,21 @@ class LoginMenu extends Component {
     } else {
       Animated.sequence([
         Animated.parallel([
-          Animated.timing(this.state.opacity, {
+          Animated.timing(opacity, {
             toValue: 0,
             duration: 0
           }),
-          Animated.timing(this.state.top, {
+          Animated.timing(top, {
             toValue: height,
             duration: 0
           })
         ]),
         Animated.parallel([
-          Animated.timing(this.state.topContent, {
+          Animated.timing(topContent, {
             toValue: height,
             duration: 400
           }),
-          Animated.timing(this.state.topIcon, {
+          Animated.timing(topIcon, {
             toValue: height,
             duration: 400
           })
@@ -79,60 +73,58 @@ class LoginMenu extends Component {
     }
   }
 
-  toggleModal = () => {
-    this.props.toggleLoginModal()
+  function toggleModal() {
+    toggleLoginModal()
   }
 
-  renderLogin = () => (
-    <>
-      <Distribution>
-        <Input placeholder={'EMAIL'} />
-      </Distribution>
-      <Distribution>
-        <Input placeholder={'SENHA'} password={true} />
-      </Distribution>
-      <Distribution>
-        <Button title={'ENTRAR'} confirm={true} />
-      </Distribution>
-    </>
-  )
-
-  renderSignIn = () => (
-    <>
-      <Distribution>
-        <Input placeholder={'EMAIL'} />
-      </Distribution>
-      <Distribution>
-        <Input placeholder={'USUÁRIO'} />
-      </Distribution>
-      <Distribution>
-        <Input placeholder={'PASSWORD'} password={true} />
-      </Distribution>
-      <Distribution>
-        <Button title={'CADASTRAR E ENTRAR'} confirm={true} />
-      </Distribution>
-    </>
-  )
-
-  render() {
-    let { top, topContent, topIcon } = this.state
-    let { type } = this.props
+  function renderLogin() {
     return (
       <>
-        <Container style={{ top: top }} />
-        <IconContainer style={{ top: topIcon }}>
-          <IconButton onPress={() => this.toggleModal()}>
-            <Icon />
-          </IconButton>
-        </IconContainer>
-        <Content style={{ top: topContent }}>
-          <Body>
-            {type == 'Login' ? this.renderLogin() : this.renderSignIn()}
-          </Body>
-        </Content>
+        <Distribution>
+          <Input placeholder={'EMAIL'} />
+        </Distribution>
+        <Distribution>
+          <Input placeholder={'SENHA'} password={true} />
+        </Distribution>
+        <Distribution>
+          <Button title={'ENTRAR'} confirm={true} />
+        </Distribution>
       </>
     )
   }
+
+  function renderSignIn() {
+    return (
+      <>
+        <Distribution>
+          <Input placeholder={'EMAIL'} />
+        </Distribution>
+        <Distribution>
+          <Input placeholder={'USUÁRIO'} />
+        </Distribution>
+        <Distribution>
+          <Input placeholder={'PASSWORD'} password={true} />
+        </Distribution>
+        <Distribution>
+          <Button title={'CADASTRAR E ENTRAR'} confirm={true} />
+        </Distribution>
+      </>
+    )
+  }
+
+  return (
+    <>
+      <Container style={{ top: top }} />
+      <IconContainer style={{ top: topIcon }}>
+        <IconButton onPress={() => toggleModal()}>
+          <Icon />
+        </IconButton>
+      </IconContainer>
+      <Content style={{ top: topContent }}>
+        <Body>{type == 'Login' ? renderLogin() : renderSignIn()}</Body>
+      </Content>
+    </>
+  )
 }
 
 LoginMenu.defaultProps = {
@@ -141,11 +133,9 @@ LoginMenu.defaultProps = {
 
 LoginMenu.propTypes = {}
 
-const mapStateToProps = state => {
-  return {
-    showLoginModal: state.Animation.showLoginModal
-  }
-}
+const mapStateToProps = state => ({
+  showLoginModal: state.Animation.showLoginModal
+})
 
 export default connect(
   mapStateToProps,

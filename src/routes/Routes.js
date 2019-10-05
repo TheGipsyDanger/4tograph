@@ -5,7 +5,7 @@ import { createAppContainer } from 'react-navigation'
 
 const AppNavigator = createStackNavigator({
   // Insert views here
-  Home: { screen: views.Home },
+  Home: { screen: views.Home, navigationOptions: { header: null } },
   LoginMenu: { screen: views.LoginMenu }
 })
 
