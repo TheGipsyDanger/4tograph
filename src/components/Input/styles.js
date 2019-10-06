@@ -4,7 +4,6 @@ import { fonts } from '../../styles'
 export const Container = styled.View``
 export const TextInput = styled.TextInput.attrs(props => ({
   placeholder: props.placeholder,
-  secureTextEntry: props.password,
   placeholderTextColor: '#eeeeee',
   autoCapitalize: 'none',
   autoCorrect: false

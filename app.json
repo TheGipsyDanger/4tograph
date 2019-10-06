@@ -7,9 +7,9 @@
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/Logo.png",
+    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./src/assets/BG.png",
+      "image": "./src/assets/splash.png",
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },

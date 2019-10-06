@@ -13,7 +13,8 @@ const Button = ({ title, press, confirm }) => {
 
 Button.defaultProps = {
   title: '',
-  confirm: false
+  confirm: false,
+  press: () => {}
 }
 
 Button.propTypes = {

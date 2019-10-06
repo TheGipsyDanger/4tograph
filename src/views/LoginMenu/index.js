@@ -18,10 +18,16 @@ import PropTypes from 'prop-types'
 const { height } = Dimensions.get('window')
 
 function LoginMenu({ showLoginModal, toggleLoginModal, type }) {
-  const [top, setTop] = useState(new Animated.Value(height))
-  const [topContent, setTopContent] = useState(new Animated.Value(height))
-  const [topIcon, setTopIcon] = useState(new Animated.Value(height))
-  const [opacity, setOpacity] = useState(new Animated.Value(0))
+  // FIELDS
+  const [email, setEmail] = useState('')
+  const [userName, setUserName] = useState('')
+  const [password, setPassword] = useState('')
+
+  // ANIMATIONS
+  const [top] = useState(new Animated.Value(height))
+  const [topContent] = useState(new Animated.Value(height))
+  const [topIcon] = useState(new Animated.Value(height))
+  const [opacity] = useState(new Animated.Value(0))
 
   useEffect(() => {
     animationModal()
@@ -74,6 +80,9 @@ function LoginMenu({ showLoginModal, toggleLoginModal, type }) {
   }
 
   function toggleModal() {
+    setEmail('')
+    setUserName('')
+    setPassword('')
     toggleLoginModal()
   }
 
@@ -81,10 +90,21 @@ function LoginMenu({ showLoginModal, toggleLoginModal, type }) {
     return (
       <>
         <Distribution>
-          <Input placeholder={'EMAIL'} />
+          <Input
+            key={'1'}
+            value={email}
+            change={setEmail}
+            placeholder={'EMAIL'}
+          />
         </Distribution>
         <Distribution>
-          <Input placeholder={'SENHA'} password={true} />
+          <Input
+            key={'2'}
+            value={password}
+            change={setPassword}
+            placeholder={'SENHA'}
+            password={true}
+          />
         </Distribution>
         <Distribution>
           <Button title={'ENTRAR'} confirm={true} />
@@ -97,13 +117,29 @@ function LoginMenu({ showLoginModal, toggleLoginModal, type }) {
     return (
       <>
         <Distribution>
-          <Input placeholder={'EMAIL'} />
+          <Input
+            key={'3'}
+            value={email}
+            change={setEmail}
+            placeholder={'EMAIL'}
+          />
         </Distribution>
         <Distribution>
-          <Input placeholder={'USUÁRIO'} />
+          <Input
+            key={'4'}
+            value={userName}
+            change={setUserName}
+            placeholder={'USUÁRIO'}
+          />
         </Distribution>
         <Distribution>
-          <Input placeholder={'PASSWORD'} password={true} />
+          <Input
+            key={'5'}
+            value={password}
+            change={setPassword}
+            placeholder={'PASSWORD'}
+            password={true}
+          />
         </Distribution>
         <Distribution>
           <Button title={'CADASTRAR E ENTRAR'} confirm={true} />
