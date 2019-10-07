@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 69856,
-  "expoServerNgrokUrl": "https://8i-cqj.altertecnologia.4tograph.exp.direct",
-  "packagerNgrokUrl": "https://packager.8i-cqj.altertecnologia.4tograph.exp.direct",
-  "ngrokPid": 69870
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": "https://ey-v3m.altertecnologia.4tograph.exp.direct",
+  "packagerNgrokUrl": "https://packager.ey-v3m.altertecnologia.4tograph.exp.direct",
+  "ngrokPid": 7313
 }

@@ -11,8 +11,7 @@ export const Container = styled.View`
 export const Scroll = styled.ScrollView.attrs({
   containerContentStyle: {
     flex: 1,
-    justifyContent: 'flex-end',
-    backgroundColor: 'red'
+    justifyContent: 'flex-end'
   }
 })`
   flex: 1;
