@@ -35,6 +35,7 @@
     "react-native-web": "^0.11.7",
     "react-navigation": "latest",
     "react-navigation-stack": "latest",
+    "react-navigation-tabs": "^2.5.5",
     "react-redux": "latest",
     "redux": "latest",
     "redux-promise": "latest",
