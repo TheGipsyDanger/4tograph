@@ -9,12 +9,17 @@ import {
   TextContainer,
   Title,
   Subtext,
-  ButtonCircle
+  ButtonCircle,
+  Inciator
 } from './styles'
 import { Ionicons } from '@expo/vector-icons'
-import { LinearGradient } from 'expo-linear-gradient'
+import { ActivityIndicator } from 'react-native'
+import { Bg } from '../../components'
 import AppIntroSlider from 'react-native-app-intro-slider'
-import PropTypes from 'prop-types'
+import trophy from '../../assets/Trophy-min.png'
+import words from '../../assets/words-min.png'
+import images from '../../assets/images-min.png'
+import send from '../../assets/send-min.png'
 
 const slides = [
   {
@@ -22,32 +27,40 @@ const slides = [
     title: 'Um novo jogo social',
     text:
       'Um jogo social onde você e seus\namigos vão competir em busca de\npontos e status',
-    image: require('../../assets/Trophy.png')
+    image: trophy
   },
   {
     key: '3',
     title: 'Um novo jogo social',
     text:
       'Escolha uma das palavras sorteadas\npara você, quanto mais alto a\ndificuldade, maior será a\nrecompensa',
-    image: require('../../assets/words.png')
+    image: words
   },
   {
     key: '4',
     title: 'Um novo jogo social',
     text:
       'Tire quatro fotos que represente ou\nlembre de alguma forma a palavra\nescolhida',
-    image: require('../../assets/images.png')
+    image: images
   },
   {
     key: '5',
     title: 'Um novo jogo social',
     text:
       'Envie para seus amigos e veja se eles\nconseguem adivinhar qual é a\npalavra',
-    image: require('../../assets/send.png')
+    image: send
   }
 ]
 
-export default function Tutorial() {
+export default function Tutorial({ navigation }) {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000)
+  }, [])
+
   function _renderItem({ item }) {
     return (
       <Item>
@@ -89,23 +102,25 @@ export default function Tutorial() {
   }
 
   return (
-    <Container>
-      <LogoContainer>
-        <Logo
-          source={require('../../assets/Logo.png')}
-          resizeMode={'contain'}
-        />
-      </LogoContainer>
-      <AppIntroSlider
-        renderItem={_renderItem}
-        slides={slides}
-        renderNextButton={nextButton}
-        renderDoneButton={doneButton}
-      />
-    </Container>
+    <Bg>
+      {loading ? (
+        <Inciator>
+          <ActivityIndicator size="large" color="#fff" />
+        </Inciator>
+      ) : (
+        <>
+          <LogoContainer>
+            <Logo />
+          </LogoContainer>
+          <AppIntroSlider
+            renderItem={_renderItem}
+            slides={slides}
+            renderNextButton={nextButton}
+            renderDoneButton={doneButton}
+            onDone={() => navigation.navigate('Home')}
+          />
+        </>
+      )}
+    </Bg>
   )
 }
-
-Tutorial.defaultProps = {}
-
-Tutorial.propTypes = {}

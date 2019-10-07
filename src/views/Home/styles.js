@@ -1,7 +1,7 @@
 import { Dimensions, Animated } from 'react-native'
 import { getBottomSpace } from 'react-native-iphone-x-helper'
 import styled from 'styled-components/native'
-import Logo from '../../assets/Logo.png'
+import Logo from '../../assets/Logo-min.png'
 const { width, height } = Dimensions.get('window')
 
 export const Container = styled.View`

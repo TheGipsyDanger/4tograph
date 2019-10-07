@@ -1,14 +1,10 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-import { Container } from './styles'
-import PropTypes from 'prop-types'
+import { Container, Blur } from './styles'
 
-const Bg = props => {
-  return <Container>{props.children}</Container>
+export default function Bg({ children }) {
+  return (
+    <Container>
+      <Blur>{children}</Blur>
+    </Container>
+  )
 }
-
-Bg.defaultProps = {}
-
-Bg.propTypes = {}
-
-export default Bg
