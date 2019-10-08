@@ -20,7 +20,7 @@ const TabNavigator = createBottomTabNavigator(
         } else {
           iconName = `settings`
         }
-        return <Octicons name={iconName} size={25} color={tintColor} />
+        return <Octicons name={iconName} size={30} color={tintColor} />
       }
     }),
     tabBarOptions: {

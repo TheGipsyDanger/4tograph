@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Container, TextView} from './styles'
+import { DefaultRow, ChallengeRow } from '../../components'
+import { Container, Content, Avatar } from './styles'
 import { actions } from '../../redux/actions'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -7,22 +8,23 @@ import PropTypes from 'prop-types'
 function Main() {
   return (
     <Container>
-      <TextView>Main</TextView>
+      <Content>
+        <DefaultRow type={'create'} />
+        <ChallengeRow />
+        <ChallengeRow />
+        <ChallengeRow />
+      </Content>
     </Container>
-  );
+  )
 }
 
-Main.defaultProps = {
+Main.defaultProps = {}
 
-}
-
-Main.propTypes = {
-
-}
+Main.propTypes = {}
 
 const mapStateToProps = state => {
   return {
-    initial:[]
+    initial: []
   }
 }
 
