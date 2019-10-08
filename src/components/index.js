@@ -3,6 +3,7 @@ import Button from './Button'
 import Input from './Input'
 import DefaultRow from './DefaultRow'
 import ChallengeRow from './ChallengeRow'
+import ChallengeTitle from './ChallengeTitle'
 // Import component here
 
 export {
@@ -11,5 +12,6 @@ export {
   Input,
   DefaultRow,
   ChallengeRow,
+  ChallengeTitle,
   // Insert component here
 }

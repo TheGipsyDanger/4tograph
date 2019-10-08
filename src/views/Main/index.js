@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { DefaultRow, ChallengeRow } from '../../components'
-import { Container, Content, Avatar } from './styles'
+import { DefaultRow, ChallengeRow, ChallengeTitle } from '../../components'
+import { Container, Content, Separate } from './styles'
 import { actions } from '../../redux/actions'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -10,9 +10,16 @@ function Main() {
     <Container>
       <Content>
         <DefaultRow type={'create'} />
-        <ChallengeRow />
-        <ChallengeRow />
-        <ChallengeRow />
+        <Separate>
+          <ChallengeTitle isMy={true} />
+          <ChallengeRow />
+        </Separate>
+        <Separate>
+          <ChallengeTitle isMy={false} />
+          <ChallengeRow />
+          <ChallengeRow />
+          <ChallengeRow />
+        </Separate>
       </Content>
     </Container>
   )

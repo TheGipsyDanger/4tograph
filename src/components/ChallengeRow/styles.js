@@ -1,10 +1,11 @@
 import styled from 'styled-components/native'
 import { fonts } from '../../styles'
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.6
+})`
   flex: 1;
   flex-direction: row;
-  /* align-items: center; */
   height: 64px;
   border-width: ${0.5}px;
   border-top-width: 0px;
