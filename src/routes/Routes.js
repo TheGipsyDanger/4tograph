@@ -8,6 +8,7 @@ import { createBottomTabNavigator } from 'react-navigation-tabs'
 const TabNavigator = createBottomTabNavigator(
   {
     Main: { screen: views.Main },
+    Friends: { screen: views.Friends },
     Settings: { screen: views.Settings }
   },
   {
@@ -17,6 +18,8 @@ const TabNavigator = createBottomTabNavigator(
         let iconName
         if (routeName === 'Main') {
           iconName = `home`
+        } else if (routeName === 'Friends') {
+          iconName = `organization`
         } else {
           iconName = `settings`
         }

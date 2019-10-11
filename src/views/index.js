@@ -3,6 +3,7 @@ import LoginMenu from './LoginMenu'
 import Tutorial from './Tutorial'
 import Main from './Main'
 import Settings from './Settings'
+import Friends from './Friends'
 // Import views here
 
 export {
@@ -11,5 +12,6 @@ export {
   Tutorial,
   Main,
   Settings,
+  Friends,
   // Insert views here
 }
