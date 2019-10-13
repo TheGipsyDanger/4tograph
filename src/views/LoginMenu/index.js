@@ -17,7 +17,7 @@ import PropTypes from 'prop-types'
 
 const { height } = Dimensions.get('window')
 
-function LoginMenu({ showLoginModal, toggleLoginModal, type }) {
+function LoginMenu({ showLoginModal, toggleLoginModal, type, signInRequest }) {
   // FIELDS
   const [email, setEmail] = useState('')
   const [userName, setUserName] = useState('')
@@ -107,7 +107,7 @@ function LoginMenu({ showLoginModal, toggleLoginModal, type }) {
           />
         </Distribution>
         <Distribution>
-          <Button title={'ENTRAR'} confirm={true} />
+          <Button press={signIn} title={'ENTRAR'} confirm={true} />
         </Distribution>
       </>
     )
@@ -148,6 +148,10 @@ function LoginMenu({ showLoginModal, toggleLoginModal, type }) {
     )
   }
 
+  function signIn() {
+    signInRequest(email, password)
+  }
+
   return (
     <>
       <Container style={{ top: top }} />
@@ -175,5 +179,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { ...actions.Animation }
+  { ...actions.Animation, ...actions.LoginRegister }
 )(LoginMenu)
