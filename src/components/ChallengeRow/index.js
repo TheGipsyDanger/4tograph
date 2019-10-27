@@ -1,33 +1,29 @@
 import React, { useState, useEffect } from 'react'
-import {
-  Container,
-  TextContainer,
-  AvatarContainer,
-  Avatar,
-  Name,
-  Description
-} from './styles'
+import * as C from './styles'
 import PropTypes from 'prop-types'
 
 export default function ChallengeRow({ name, myTurn }) {
   return (
-    <Container>
-      <AvatarContainer>
-        <Avatar />
-      </AvatarContainer>
-      <TextContainer>
-        <Name>{name}</Name>
-        <Description>
+    <C.Container>
+      <C.AvatarContainer>
+        <C.Avatar />
+      </C.AvatarContainer>
+      <C.TextContainer>
+        <C.Name>{name}</C.Name>
+        <C.Description>
           {myTurn ? 'It’s your turn to play' : 'Waiting for them to play!'}
-        </Description>
-      </TextContainer>
-    </Container>
+        </C.Description>
+      </C.TextContainer>
+    </C.Container>
   )
 }
 
 ChallengeRow.defaultProps = {
-  name: 'Renan Henrique',
+  name: 'John Doe',
   myTurn: true
 }
 
-ChallengeRow.propTypes = {}
+ChallengeRow.propTypes = {
+  name: PropTypes.string.isRequired,
+  myTurn: PropTypes.bool.isRequired
+}

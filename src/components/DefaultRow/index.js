@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Container, TextView, Avatar } from './styles'
 import { AntDesign } from 'react-native-vector-icons'
+import * as C from './styles'
 import PropTypes from 'prop-types'
 
 export default function DefaultRow({ type }) {
   return (
-    <Container>
+    <C.Container>
       {type == 'create' ? (
         <AntDesign
           name={'plus'}
@@ -14,14 +14,16 @@ export default function DefaultRow({ type }) {
           color="#034078"
         />
       ) : (
-        <Avatar />
+        <C.Avatar />
       )}
-      <TextView>Challenge a friend!</TextView>
-    </Container>
+      <C.Text>Challenge a friend!</C.Text>
+    </C.Container>
   )
 }
 
-DefaultRow.defaultProps = {}
+DefaultRow.defaultProps = {
+  type: 'create'
+}
 
 DefaultRow.propTypes = {
   type: PropTypes.string.isRequired

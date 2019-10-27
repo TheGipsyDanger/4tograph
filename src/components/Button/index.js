@@ -1,13 +1,12 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-import { Container, TextView } from './styles'
+import * as C from './styles'
 import PropTypes from 'prop-types'
 
 const Button = ({ title, press, confirm }) => {
   return (
-    <Container confirm={confirm} onPress={() => press()}>
-      <TextView confirm={confirm}>{title}</TextView>
-    </Container>
+    <C.Container confirm={confirm} onPress={() => press()}>
+      <C.Text confirm={confirm}>{title}</C.Text>
+    </C.Container>
   )
 }
 
@@ -18,7 +17,9 @@ Button.defaultProps = {
 }
 
 Button.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  confirm: PropTypes.bool.isRequired,
+  press: PropTypes.func.isRequired
 }
 
 export default Button

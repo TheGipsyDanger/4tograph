@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react'
-import { ContainerOne, ContainerTwo, TitleOne, TitleTwo } from './styles'
+import * as C from './styles'
 import PropTypes from 'prop-types'
 
 export default function ChallengeTitle({ isMy }) {
   function my() {
     return (
-      <ContainerOne>
-        <TitleOne>YOUR TURN</TitleOne>
-      </ContainerOne>
+      <C.ContainerOne>
+        <C.TitleOne>YOUR TURN</C.TitleOne>
+      </C.ContainerOne>
     )
   }
 
   function their() {
     return (
-      <ContainerTwo>
-        <TitleTwo>THEIR TURN</TitleTwo>
-      </ContainerTwo>
+      <C.ContainerTwo>
+        <C.TitleTwo>THEIR TURN</C.TitleTwo>
+      </C.ContainerTwo>
     )
   }
 
@@ -26,4 +26,6 @@ ChallengeTitle.defaultProps = {
   isMy: true
 }
 
-ChallengeTitle.propTypes = {}
+ChallengeTitle.propTypes = {
+  isMy: PropTypes.bool.isRequired
+}

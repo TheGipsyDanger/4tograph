@@ -1,8 +1,8 @@
 import styled from 'styled-components/native'
 import { fonts } from '../../styles'
 
-export const Container = styled.View``
-export const TextInput = styled.TextInput.attrs(props => ({
+const Container = styled.View``
+const TextInput = styled.TextInput.attrs(props => ({
   placeholder: props.placeholder,
   placeholderTextColor: '#eeeeee',
   autoCapitalize: 'none',
@@ -17,3 +17,4 @@ export const TextInput = styled.TextInput.attrs(props => ({
   font-family: ${fonts.bold};
   text-align: center;
 `
+export { Container, TextInput }

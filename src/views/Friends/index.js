@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Container, TextView} from './styles'
+import { Container, TextView } from './styles'
 import { actions } from '../../redux/actions'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -9,20 +9,16 @@ function Friends() {
     <Container>
       <TextView>Friends</TextView>
     </Container>
-  );
+  )
 }
 
-Friends.defaultProps = {
+Friends.defaultProps = {}
 
-}
-
-Friends.propTypes = {
-
-}
+Friends.propTypes = {}
 
 const mapStateToProps = state => {
   return {
-    initial:[]
+    initial: []
   }
 }
 

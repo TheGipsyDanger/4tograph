@@ -1,10 +1,10 @@
 import React from 'react'
-import { Container, Blur } from './styles'
+import * as C from './styles'
 
 export default function Bg({ children }) {
   return (
-    <Container>
-      <Blur>{children}</Blur>
-    </Container>
+    <C.Container>
+      <C.Blur>{children}</C.Blur>
+    </C.Container>
   )
 }

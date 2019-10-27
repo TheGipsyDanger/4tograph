@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 import { fonts } from '../../styles'
 
-export const Container = styled.TouchableOpacity.attrs({
+const Container = styled.TouchableOpacity.attrs({
   activeOpacity: 0.6
 })`
   height: 44px;
@@ -12,7 +12,7 @@ export const Container = styled.TouchableOpacity.attrs({
   border-bottom-width: ${0.5}px;
   border-color: #cccccc;
 `
-export const Avatar = styled.Image`
+const Avatar = styled.Image`
   height: 36px;
   width: 36px;
   background: #ccc;
@@ -20,8 +20,10 @@ export const Avatar = styled.Image`
   margin: 0 10px;
 `
 
-export const TextView = styled.Text`
+const Text = styled.Text`
   font-size: 14px;
   color: #034078;
   font-family: ${fonts.bold};
 `
+
+export { Container, Avatar, Text }
