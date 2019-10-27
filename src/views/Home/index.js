@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import * as C from './styles'
 import { Bg, Button } from '../../components'
 import { actions } from '../../redux/actions'
+import * as C from './styles'
 import LoginMenu from '../LoginMenu'
 import PropTypes from 'prop-types'
 

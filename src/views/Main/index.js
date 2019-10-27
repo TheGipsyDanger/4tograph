@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import { DefaultRow, ChallengeRow, ChallengeTitle } from '../../components'
-import { Container, Content, Separate } from './styles'
 import { actions } from '../../redux/actions'
 import { connect } from 'react-redux'
+import * as C from './styles'
 import PropTypes from 'prop-types'
 
 function Main() {
   return (
-    <Container>
-      <Content>
+    <C.Container>
+      <C.Content>
         <DefaultRow type={'create'} />
-        <Separate>
+        <C.Separate>
           <ChallengeTitle isMy={true} />
           <ChallengeRow />
-        </Separate>
-        <Separate>
+        </C.Separate>
+        <C.Separate>
           <ChallengeTitle isMy={false} />
           <ChallengeRow />
           <ChallengeRow />
           <ChallengeRow />
-        </Separate>
-      </Content>
-    </Container>
+        </C.Separate>
+      </C.Content>
+    </C.Container>
   )
 }
 

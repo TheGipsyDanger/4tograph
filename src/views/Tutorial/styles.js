@@ -4,23 +4,23 @@ import LOGO from '../../assets/Logo-min.png'
 import { View } from 'react-native-animatable'
 import { fonts } from '../../styles'
 
-export const Container = styled.ImageBackground.attrs({
+const Container = styled.ImageBackground.attrs({
   source: BG
 })`
   flex: 1;
   background: #034078;
 `
-export const Item = styled(View).attrs({
+const Item = styled(View).attrs({
   animation: 'fadeInUp'
 })`
   flex: 1;
   justify-content: center;
 `
-export const Inciator = styled.View`
+const Inciator = styled.View`
   flex: 1;
   justify-content: center;
 `
-export const LogoContainer = styled(View).attrs({
+const LogoContainer = styled(View).attrs({
   animation: 'fadeInDown'
 })`
   position: absolute;
@@ -29,7 +29,7 @@ export const LogoContainer = styled(View).attrs({
   width: 100%;
   align-items: center;
 `
-export const Logo = styled.Image.attrs({
+const Logo = styled.Image.attrs({
   source: LOGO,
   resizeMode: 'contain'
 })`
@@ -37,34 +37,34 @@ export const Logo = styled.Image.attrs({
   height: 43px;
   box-shadow: 0 2px 4px #000;
 `
-export const ImageContainer = styled.View`
+const ImageContainer = styled.View`
   position: absolute;
   top: 50%;
   margin-top: -80px;
   width: 100%;
   align-items: center;
 `
-export const Image = styled.Image`
+const Image = styled.Image`
   height: 160px;
 `
-export const TextContainer = styled.View`
+const TextContainer = styled.View`
   margin-top: 20px;
   align-items: center;
 `
-export const Title = styled.Text`
+const Title = styled.Text`
   font-size: 18px;
   color: #fff;
   font-family: ${fonts.bold};
   box-shadow: 0 2px 8px #000;
 `
-export const Subtext = styled.Text`
+const Subtext = styled.Text`
   margin-top: 20px;
   font-size: 18px;
   color: #fff;
   font-family: ${fonts.regular};
   text-align: center;
 `
-export const ButtonCircle = styled.View`
+const ButtonCircle = styled.View`
   width: 40px;
   height: 40px;
   background: rgba(0, 0, 0, 0.2);
@@ -72,3 +72,16 @@ export const ButtonCircle = styled.View`
   justify-content: center;
   align-items: center;
 `
+export {
+  Container,
+  Item,
+  Inciator,
+  LogoContainer,
+  Logo,
+  ImageContainer,
+  Image,
+  TextContainer,
+  Title,
+  Subtext,
+  ButtonCircle
+}

@@ -2,17 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Dimensions, Animated } from 'react-native'
 import { actions } from '../../redux/actions'
 import { connect } from 'react-redux'
-import {
-  Container,
-  Content,
-  IconContainer,
-  IconButton,
-  Icon,
-  TextView,
-  Body,
-  Distribution
-} from './styles'
 import { Input, Button } from '../../components'
+import * as C from './styles'
 import PropTypes from 'prop-types'
 
 const { height } = Dimensions.get('window')
@@ -89,15 +80,15 @@ function LoginMenu({ showLoginModal, toggleLoginModal, type, signInRequest }) {
   function renderLogin() {
     return (
       <>
-        <Distribution>
+        <C.Distribution>
           <Input
             key={'1'}
             value={email}
             change={setEmail}
             placeholder={'EMAIL'}
           />
-        </Distribution>
-        <Distribution>
+        </C.Distribution>
+        <C.Distribution>
           <Input
             key={'2'}
             value={password}
@@ -105,10 +96,10 @@ function LoginMenu({ showLoginModal, toggleLoginModal, type, signInRequest }) {
             placeholder={'SENHA'}
             password={true}
           />
-        </Distribution>
-        <Distribution>
+        </C.Distribution>
+        <C.Distribution>
           <Button press={signIn} title={'ENTRAR'} confirm={true} />
-        </Distribution>
+        </C.Distribution>
       </>
     )
   }
@@ -116,23 +107,23 @@ function LoginMenu({ showLoginModal, toggleLoginModal, type, signInRequest }) {
   function renderSignIn() {
     return (
       <>
-        <Distribution>
+        <C.Distribution>
           <Input
             key={'3'}
             value={email}
             change={setEmail}
             placeholder={'EMAIL'}
           />
-        </Distribution>
-        <Distribution>
+        </C.Distribution>
+        <C.Distribution>
           <Input
             key={'4'}
             value={userName}
             change={setUserName}
             placeholder={'USUÁRIO'}
           />
-        </Distribution>
-        <Distribution>
+        </C.Distribution>
+        <C.Distribution>
           <Input
             key={'5'}
             value={password}
@@ -140,10 +131,10 @@ function LoginMenu({ showLoginModal, toggleLoginModal, type, signInRequest }) {
             placeholder={'PASSWORD'}
             password={true}
           />
-        </Distribution>
-        <Distribution>
+        </C.Distribution>
+        <C.Distribution>
           <Button title={'CADASTRAR E ENTRAR'} confirm={true} />
-        </Distribution>
+        </C.Distribution>
       </>
     )
   }
@@ -154,15 +145,15 @@ function LoginMenu({ showLoginModal, toggleLoginModal, type, signInRequest }) {
 
   return (
     <>
-      <Container style={{ top: top }} />
-      <IconContainer style={{ top: topIcon }}>
-        <IconButton onPress={() => toggleModal()}>
-          <Icon />
-        </IconButton>
-      </IconContainer>
-      <Content style={{ top: topContent }}>
-        <Body>{type == 'Login' ? renderLogin() : renderSignIn()}</Body>
-      </Content>
+      <C.Container style={{ top: top }} />
+      <C.IconContainer style={{ top: topIcon }}>
+        <C.IconButton onPress={() => toggleModal()}>
+          <C.Icon />
+        </C.IconButton>
+      </C.IconContainer>
+      <C.Content style={{ top: topContent }}>
+        <C.Body>{type == 'Login' ? renderLogin() : renderSignIn()}</C.Body>
+      </C.Content>
     </>
   )
 }

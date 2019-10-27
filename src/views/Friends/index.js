@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Container, TextView } from './styles'
 import { actions } from '../../redux/actions'
 import { connect } from 'react-redux'
+import * as C from './styles'
 import PropTypes from 'prop-types'
 
 function Friends() {
   return (
-    <Container>
-      <TextView>Friends</TextView>
-    </Container>
+    <C.Container>
+      <C.Text>Friends</C.Text>
+    </C.Container>
   )
 }
 

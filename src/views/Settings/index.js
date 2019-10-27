@@ -1,28 +1,24 @@
 import React, { useState, useEffect } from 'react'
-import { Container, TextView} from './styles'
+import * as C from './styles'
 import { actions } from '../../redux/actions'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 function Settings() {
   return (
-    <Container>
-      <TextView>Settings</TextView>
-    </Container>
-  );
+    <C.Container>
+      <C.Text>Settings</C.Text>
+    </C.Container>
+  )
 }
 
-Settings.defaultProps = {
+Settings.defaultProps = {}
 
-}
-
-Settings.propTypes = {
-
-}
+Settings.propTypes = {}
 
 const mapStateToProps = state => {
   return {
-    initial:[]
+    initial: []
   }
 }
 

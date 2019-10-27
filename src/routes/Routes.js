@@ -37,8 +37,8 @@ const TabNavigator = createBottomTabNavigator(
 const AppNavigator = createStackNavigator(
   {
     Home: { screen: views.Home, navigationOptions: { header: null } },
-    App: { screen: TabNavigator, navigationOptions: { header: null } },
     Tutorial: { screen: views.Tutorial, navigationOptions: { header: null } },
+    App: { screen: TabNavigator, navigationOptions: { header: null } },
     Settings: { screen: views.Settings },
     // Insert views here
     Home: { screen: views.Home, navigationOptions: { header: null } },

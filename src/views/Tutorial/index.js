@@ -1,20 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import {
-  Container,
-  Item,
-  ImageContainer,
-  LogoContainer,
-  Logo,
-  Image,
-  TextContainer,
-  Title,
-  Subtext,
-  ButtonCircle,
-  Inciator
-} from './styles'
 import { Ionicons } from '@expo/vector-icons'
 import { ActivityIndicator } from 'react-native'
 import { Bg } from '../../components'
+import * as C from './styles'
 import AppIntroSlider from 'react-native-app-intro-slider'
 import trophy from '../../assets/Trophy-min.png'
 import words from '../../assets/words-min.png'
@@ -63,55 +51,55 @@ export default function Tutorial({ navigation }) {
 
   function _renderItem({ item }) {
     return (
-      <Item>
-        <ImageContainer>
-          <Image source={item.image} resizeMode={'contain'} />
-          <TextContainer>
-            <Title>{item.title}</Title>
-            <Subtext>{item.text}</Subtext>
-          </TextContainer>
-        </ImageContainer>
-      </Item>
+      <C.Item>
+        <C.ImageContainer>
+          <C.Image source={item.image} resizeMode={'contain'} />
+          <C.TextContainer>
+            <C.Title>{item.title}</C.Title>
+            <C.Subtext>{item.text}</C.Subtext>
+          </C.TextContainer>
+        </C.ImageContainer>
+      </C.Item>
     )
   }
 
   function nextButton() {
     return (
-      <ButtonCircle>
+      <C.ButtonCircle>
         <Ionicons
           name="md-arrow-round-forward"
           color="rgba(255, 255, 255, .9)"
           size={24}
           style={{ backgroundColor: 'transparent' }}
         />
-      </ButtonCircle>
+      </C.ButtonCircle>
     )
   }
 
   function doneButton() {
     return (
-      <ButtonCircle>
+      <C.ButtonCircle>
         <Ionicons
           name="md-checkmark"
           color="rgba(255, 255, 255, .9)"
           size={24}
           style={{ backgroundColor: 'transparent' }}
         />
-      </ButtonCircle>
+      </C.ButtonCircle>
     )
   }
 
   return (
     <Bg>
       {loading ? (
-        <Inciator>
+        <C.Inciator>
           <ActivityIndicator size="large" color="#fff" />
-        </Inciator>
+        </C.Inciator>
       ) : (
         <>
-          <LogoContainer>
-            <Logo />
-          </LogoContainer>
+          <C.LogoContainer>
+            <C.Logo />
+          </C.LogoContainer>
           <AppIntroSlider
             renderItem={_renderItem}
             slides={slides}
