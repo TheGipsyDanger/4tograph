@@ -30,7 +30,6 @@ const INITIAL_STATE = {}
 export default function LoginRegister(state = INITIAL_STATE, action) {
   switch (action.type) {
     case Types.SING_IN:
-      console.log(action.payload)
       return { ...state }
     default:
       return state
