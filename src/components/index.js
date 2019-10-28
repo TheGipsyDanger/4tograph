@@ -4,6 +4,7 @@ import Input from './Input'
 import DefaultRow from './DefaultRow'
 import ChallengeRow from './ChallengeRow'
 import ChallengeTitle from './ChallengeTitle'
+import CameraBottom from './CameraBottom'
 // Import component here
 
 export {
@@ -13,5 +14,6 @@ export {
   DefaultRow,
   ChallengeRow,
   ChallengeTitle,
+  CameraBottom,
   // Insert component here
 }
