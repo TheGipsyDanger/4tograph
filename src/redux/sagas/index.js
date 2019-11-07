@@ -7,5 +7,5 @@ import { Types as User } from '../reducers/User'
 import { login } from './LoginRegister'
 
 export default function* rootSaga() {
-  return yield all([takeLatest(LoginRegister.SING_IN_REQUEST, login)])
+  return yield all([takeLatest(LoginRegister.SIGN_IN_REQUEST, login)])
 }
