@@ -10,7 +10,9 @@ export function* login({ payload: { email, password } }) {
     let resp = yield call(API.post, '/sessions', {
       email,
       password
-    })    
+    })
+    console.log(resp)
+
     yield put(UserActions.setUser(resp.data))
   } catch (err) {
     console.log({ err })

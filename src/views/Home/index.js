@@ -5,6 +5,7 @@ import { actions } from '../../redux/actions'
 import * as C from './styles'
 import LoginMenu from '../LoginMenu'
 import PropTypes from 'prop-types'
+import passwordValidate from 'password-validate'
 
 function Home({ toggleLoginModal }) {
   const [type, setType] = useState('')
