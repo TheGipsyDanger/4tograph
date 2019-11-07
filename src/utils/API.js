@@ -31,7 +31,6 @@ API.interceptors.response.use(
   response => {
     const { config, data } = response
     if (checkUrl(config.url)) {
-      console.log(data.token.token)
       setUserToken(data.token.token)
     }
     return response
