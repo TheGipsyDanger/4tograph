@@ -2,6 +2,7 @@ import axios from 'axios'
 
 export const Types = {
   SIGN_IN_REQUEST: 'loginRegister/SIGN_IN_REQUEST',
+  SIGN_UP_REQUEST: 'loginRegister/SIGN_UP_REQUEST',
   SIGN_IN: 'loginRegister/SIGN_IN'
 }
 
@@ -10,6 +11,16 @@ export const Actions = {
     return {
       type: Types.SIGN_IN_REQUEST,
       payload: {
+        email,
+        password
+      }
+    }
+  },
+  signUpRequest: (username, email, password) => {
+    return {
+      type: Types.SIGN_UP_REQUEST,
+      payload: {
+        username,
         email,
         password
       }

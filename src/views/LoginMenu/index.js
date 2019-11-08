@@ -8,10 +8,16 @@ import PropTypes from 'prop-types'
 
 const { height } = Dimensions.get('window')
 
-function LoginMenu({ showLoginModal, toggleLoginModal, type, signInRequest }) {
+function LoginMenu({
+  showLoginModal,
+  toggleLoginModal,
+  type,
+  signInRequest,
+  signUpRequest
+}) {
   // FIELDS
   const [email, setEmail] = useState('')
-  const [userName, setUserName] = useState('')
+  const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
   // ANIMATIONS
@@ -72,7 +78,7 @@ function LoginMenu({ showLoginModal, toggleLoginModal, type, signInRequest }) {
 
   function toggleModal() {
     setEmail('')
-    setUserName('')
+    setUsername('')
     setPassword('')
     toggleLoginModal()
   }
@@ -118,8 +124,8 @@ function LoginMenu({ showLoginModal, toggleLoginModal, type, signInRequest }) {
         <C.Distribution>
           <Input
             key={'4'}
-            value={userName}
-            change={setUserName}
+            value={username}
+            change={setUsername}
             placeholder={'USUÁRIO'}
           />
         </C.Distribution>
@@ -133,7 +139,7 @@ function LoginMenu({ showLoginModal, toggleLoginModal, type, signInRequest }) {
           />
         </C.Distribution>
         <C.Distribution>
-          <Button title={'CADASTRAR E ENTRAR'} confirm={true} />
+          <Button press={signUp} title={'CADASTRAR E ENTRAR'} confirm={true} />
         </C.Distribution>
       </>
     )
@@ -141,6 +147,10 @@ function LoginMenu({ showLoginModal, toggleLoginModal, type, signInRequest }) {
 
   function signIn() {
     signInRequest(email, password)
+  }
+
+  function signUp() {
+    signUpRequest(username, email, password)
   }
 
   return (

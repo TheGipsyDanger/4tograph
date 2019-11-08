@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { storeAsyncToken, getAsyncToken } from './token'
-import { AsyncStorage } from 'react-native'
 import { API_URL } from '../configs/constants'
 
 const API = axios.create({
@@ -13,14 +12,14 @@ const setUserToken = token => {
 
 const getUserToken = async () => {
   try {
-    return await AsyncStorage.getItem('token')
+    return await getAsyncToken()
   } catch (error) {
     return error
   }
 }
 
 const checkUrl = url => {
-  return url.endsWith('login') || url.endsWith('sessions')
+  return url.endsWith('users') || url.endsWith('sessions')
 }
 
 API.defaults.params = {}

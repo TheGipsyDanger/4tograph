@@ -4,8 +4,11 @@ import { Types as LoginRegister } from '../reducers/LoginRegister'
 import { Types as User } from '../reducers/User'
 // Import action types
 
-import { login } from './LoginRegister'
+import { login, register } from './LoginRegister'
 
 export default function* rootSaga() {
-  return yield all([takeLatest(LoginRegister.SIGN_IN_REQUEST, login)])
+  return yield all([
+    takeLatest(LoginRegister.SIGN_IN_REQUEST, login),
+    takeLatest(LoginRegister.SIGN_UP_REQUEST, register)
+  ])
 }

@@ -16,3 +16,16 @@ export function* login({ payload: { email, password } }) {
     console.log({ err })
   }
 }
+
+export function* register({ payload: { username, email, password } }) {
+  try {
+    let resp = yield call(API.post, '/users', {
+      username,
+      email,
+      password
+    })
+    yield put(UserActions.setUser(resp.data))
+  } catch (err) {
+    console.log({ err })
+  }
+}
