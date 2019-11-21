@@ -36,8 +36,8 @@ const TabNavigator = createBottomTabNavigator(
 
 const AppNavigator = createStackNavigator(
   {
-    Home: { screen: views.Home, navigationOptions: { header: null } },
     Camera: { screen: views.Camera },
+    Home: { screen: views.Home, navigationOptions: { header: null } },
     Tutorial: { screen: views.Tutorial, navigationOptions: { header: null } },
     App: { screen: TabNavigator, navigationOptions: { header: null } },
     Settings: { screen: views.Settings },

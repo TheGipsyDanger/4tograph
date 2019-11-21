@@ -20,7 +20,7 @@ const CustomCamera = styled(Camera).attrs({
   justify-content: flex-end;
 `
 const Bottom = styled.View`
-  height: ${getBottomSpace() + 56}px;
+  height: ${(getBottomSpace() + 56) * 2}px;
 `
 
 export { Container, Text, CustomCamera, Bottom }
