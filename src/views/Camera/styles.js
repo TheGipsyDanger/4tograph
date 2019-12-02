@@ -9,7 +9,7 @@ const Container = styled.View`
   flex: 1;
 `
 const Text = styled.Text`
-  font-size: 18px;
+  font-size: 60px;
   color: #fff;
   font-weight: bold;
 `
@@ -17,10 +17,15 @@ const CustomCamera = styled(Camera).attrs({
   type: 'back'
 })`
   flex: 1;
-  justify-content: flex-end;
+  justify-content: space-between;
+`
+const Top = styled.View`
+  align-items: flex-end;
+  margin-top: ${getStatusBarHeight()}px;
+  margin-right: 32px;
 `
 const Bottom = styled.View`
   height: ${(getBottomSpace() + 56) * 2}px;
 `
 
-export { Container, Text, CustomCamera, Bottom }
+export { Container, Text, CustomCamera, Top, Bottom }

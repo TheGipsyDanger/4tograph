@@ -8,32 +8,49 @@ const Container = styled.View`
   flex: 1;
 `
 const CameraButtonContainer = styled.View`
-  position: absolute;
+  /* position: absolute;
   left: 50%;
   margin-left: -32px;
-  height: 64px;
   width: 64px;
-  background: black;
-  border-radius: 32px;
+  background: red;
+  border-radius: 32px; */
+  /* flex: 1; */
+  height: 64px;
+  justify-content: center;
+  align-items: center;
+  background: red;
 `
 const CameraButton = styled.TouchableOpacity`
   height: 64px;
   width: 64px;
+  margin-top: 32px;
   background: white;
   border-radius: 32px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 `
 const FirstLine = styled.View`
   flex: 1;
+  background: red;
   flex-direction: row;
 `
 const SecondLine = styled.View`
   flex: 1;
-  background: rgba(0, 0, 0, 0.45);
+  background: white;
+  /* background: rgba(0, 0, 0, 0.45); */
   flex-direction: row;
   padding-top: 4px;
   justify-content: space-around;
 `
+
+const Test = styled.View`
+  flex: 1;
+  background: red;
+  /* background: rgba(0, 0, 0, 0.45); */
+  flex-direction: row;
+  padding-top: 4px;
+  justify-content: space-around;
+`
+
 const Button = styled.TouchableOpacity.attrs({
   activeOpacity: 0.6
 })`
@@ -50,6 +67,7 @@ const Image = styled.Image`
 export {
   Container,
   Image,
+  Test,
   FirstLine,
   SecondLine,
   Button,

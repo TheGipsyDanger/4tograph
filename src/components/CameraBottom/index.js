@@ -7,7 +7,8 @@ export default function CameraBottom({ images }) {
     <C.Container>
       <C.FirstLine>
         <C.Button onPress={() => alert('1')} first={true} />
-        <C.Button onPress={() => alert('2')} first={false} />
+        <C.Button onPress={() => alert('2')} first={true} />
+        <C.Button onPress={() => alert('3')} first={false} />
       </C.FirstLine>
       <C.SecondLine>
         {images.map((image, index) => (
@@ -19,9 +20,6 @@ export default function CameraBottom({ images }) {
           />
         ))}
       </C.SecondLine>
-      <C.CameraButtonContainer>
-        <C.CameraButton onPress={() => alert('3')} />
-      </C.CameraButtonContainer>
     </C.Container>
   )
 }

@@ -17,6 +17,9 @@ function Camera({ images }) {
   return (
     <C.Container>
       <C.CustomCamera>
+        <C.Top>
+          <C.Text>2</C.Text>
+        </C.Top>
         <C.Bottom>
           <CameraBottom images={images} />
         </C.Bottom>
