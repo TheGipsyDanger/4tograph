@@ -13,9 +13,12 @@ const Text = styled.Text`
   color: #fff;
   font-weight: bold;
 `
-const CustomCamera = styled(Camera).attrs({
-  type: 'back'
-})`
+const CustomCamera = styled(Camera).attrs(props => ({
+  type: props.type,
+  flashMode: props.flash
+    ? Camera.Constants.FlashMode.torch
+    : Camera.Constants.FlashMode.off
+}))`
   flex: 1;
   justify-content: space-between;
 `
