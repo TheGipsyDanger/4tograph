@@ -24,11 +24,11 @@ const CustomCamera = styled(Camera).attrs(props => ({
 `
 const Top = styled.View`
   align-items: flex-end;
-  margin-top: ${getStatusBarHeight()}px;
+  /* margin-top: ${getStatusBarHeight()}px; */
   margin-right: 32px;
 `
 const Bottom = styled.View`
-  height: ${(getBottomSpace() + 56) * 2}px;
+  height: ${(getBottomSpace() + 60) * 2.5}px;
 `
 
 export { Container, Text, CustomCamera, Top, Bottom }

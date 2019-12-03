@@ -1,10 +1,10 @@
 {
-  "devToolsPort": 19003,
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 5787,
   "expoServerNgrokUrl": "https://7d-6vh.anonymous.4tograph.exp.direct",
   "packagerNgrokUrl": "https://packager.7d-6vh.anonymous.4tograph.exp.direct",
-  "ngrokPid": 45069,
+  "ngrokPid": 5812,
   "webpackServerPort": null
 }

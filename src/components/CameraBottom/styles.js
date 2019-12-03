@@ -7,6 +7,7 @@ import ICON from '@expo/vector-icons/MaterialIcons'
 
 const Container = styled.View`
   flex: 1;
+  justify-content: space-between;
 `
 
 const CameraButtonContainer = styled.View`
@@ -17,20 +18,20 @@ const CameraButtonContainer = styled.View`
 `
 
 const CameraButton = styled.View`
-  height: 64px;
-  width: 64px;
+  height: 60px;
+  width: 60px;
   background: white;
-  border-radius: 32px;
+  border-radius: 30px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 `
 
 const FirstLine = styled.View`
-  flex: 1;
+  height: 60px;
   flex-direction: row;
 `
 
 const SecondLine = styled.View`
-  flex: 1;
+  height: 60px;
   background: rgba(0, 0, 0, 0.6);
   flex-direction: row;
   padding-top: 4px;
