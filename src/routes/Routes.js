@@ -36,11 +36,13 @@ const TabNavigator = createBottomTabNavigator(
 
 const AppNavigator = createStackNavigator(
   {
-    Camera: { screen: views.Camera },
-    Home: { screen: views.Home, navigationOptions: { header: null } },
-    Tutorial: { screen: views.Tutorial, navigationOptions: { header: null } },
+    StartGame: { screen: views.StartGame },
     App: { screen: TabNavigator, navigationOptions: { header: null } },
+    Tutorial: { screen: views.Tutorial, navigationOptions: { header: null } },
+    Home: { screen: views.Home, navigationOptions: { header: null } },
+    Camera: { screen: views.Camera },
     Settings: { screen: views.Settings },
+    StartGame: { screen: views.StartGame },
     // Insert views here
     Home: { screen: views.Home, navigationOptions: { header: null } },
     LoginMenu: { screen: views.LoginMenu }
