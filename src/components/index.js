@@ -5,6 +5,7 @@ import DefaultRow from './DefaultRow'
 import ChallengeRow from './ChallengeRow'
 import ChallengeTitle from './ChallengeTitle'
 import CameraBottom from './CameraBottom'
+import Avatar from './Avatar'
 // Import component here
 
 export {
@@ -15,5 +16,6 @@ export {
   ChallengeRow,
   ChallengeTitle,
   CameraBottom,
+  Avatar,
   // Insert component here
 }

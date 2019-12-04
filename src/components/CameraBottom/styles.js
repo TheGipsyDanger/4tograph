@@ -44,9 +44,6 @@ const Button = styled.TouchableOpacity.attrs({
   flex: 1;
   justify-content: center;
   align-items: center;
-  /* border-color: white;
-  border-bottom-width: ${1 / 3}px;
-  border-right-width: ${props => (props.first ? 1 / 3 : 0)}px; */
 `
 const Image = styled.Image`
   width: 48px;
