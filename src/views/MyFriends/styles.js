@@ -2,14 +2,21 @@ import styled from 'styled-components/native'
 
 const Container = styled.View`
   flex: 1;
-  background: #f37321;
-  align-items: center;
-  justify-content: center;
+  background: #fff;
 `
+
 const Text = styled.Text`
   font-size: 18px;
-  color: #fff;
+  color: #f37321;
   font-weight: bold;
 `
 
-export { Container, Text }
+const List = styled.FlatList.attrs({
+  contentContainerStyle: { paddingTop: 24, paddingLeft: 16 }
+})``
+
+const Separator = styled.View`
+  height: 44px;
+`
+
+export { Container, Text, List, Separator }
