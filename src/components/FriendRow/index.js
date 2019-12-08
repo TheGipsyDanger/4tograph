@@ -3,7 +3,12 @@ import { Avatar } from '../../components'
 import * as C from './styles'
 import PropTypes from 'prop-types'
 
-export default function FriendRow({ name }) {
+export default function FriendRow({
+  name,
+  listType,
+  firstAction,
+  secondAction
+}) {
   return (
     <C.Container>
       <C.Content>
@@ -17,9 +22,15 @@ export default function FriendRow({ name }) {
 }
 
 FriendRow.defaultProps = {
-  name: ''
+  name: '',
+  listType: '',
+  firstAction: () => {},
+  secondAction: () => {}
 }
 
 FriendRow.propTypes = {
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  listType: PropTypes.string.isRequired,
+  firstAction: PropTypes.func.isRequired,
+  secondAction: PropTypes.func.isRequired
 }
