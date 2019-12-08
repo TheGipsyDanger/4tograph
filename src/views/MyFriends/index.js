@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import * as C from './styles'
-import { FriendRow } from '../../components'
+import { FriendList } from '../../components'
 import { actions } from '../../redux/actions'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -15,15 +15,7 @@ const friends = [
 function MyFriends() {
   return (
     <C.Container>
-      <C.List
-        data={friends}
-        renderItem={({ item: friend }) => (
-          <C.Separator>
-            <FriendRow name={friend.name} />
-          </C.Separator>
-        )}
-        keyExtractor={(item, index) => String(index)}
-      />
+      <FriendList data={friends} title="My Friends" />
     </C.Container>
   )
 }
