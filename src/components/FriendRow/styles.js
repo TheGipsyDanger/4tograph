@@ -3,10 +3,12 @@ import { fonts } from '../../styles'
 
 const Container = styled.View`
   flex: 1;
+  justify-content: center;
 `
 
 const Content = styled.View`
   flex-direction: row;
+  margin-left: 16px;
 `
 
 const TextContent = styled.View`

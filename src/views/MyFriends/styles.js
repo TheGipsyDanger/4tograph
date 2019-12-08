@@ -12,11 +12,13 @@ const Text = styled.Text`
 `
 
 const List = styled.FlatList.attrs({
-  contentContainerStyle: { paddingTop: 24, paddingLeft: 16 }
+  contentContainerStyle: { paddingTop: 24 }
 })``
 
 const Separator = styled.View`
   height: 44px;
+  border-bottom-width: ${1 / 2}px;
+  border-color: #cccccc;
 `
 
 export { Container, Text, List, Separator }
