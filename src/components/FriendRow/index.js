@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Avatar } from '../../components'
+import Avatar from '../Avatar'
 import * as C from './styles'
 import PropTypes from 'prop-types'
 

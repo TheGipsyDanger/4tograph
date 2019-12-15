@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { FriendRow } from '../../components'
+import FriendRow from '../FriendRow'
 import * as C from './styles'
 import PropTypes from 'prop-types'
 

@@ -6,7 +6,6 @@ import ChallengeRow from './ChallengeRow'
 import ChallengeTitle from './ChallengeTitle'
 import CameraBottom from './CameraBottom'
 import Avatar from './Avatar'
-import FriendRow from './FriendRow'
 import FriendList from './FriendList'
 // Import component here
 
@@ -19,7 +18,6 @@ export {
   ChallengeTitle,
   CameraBottom,
   Avatar,
-  FriendRow,
-  FriendList,
+  FriendList
   // Insert component here
 }
