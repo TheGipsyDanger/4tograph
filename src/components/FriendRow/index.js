@@ -15,6 +15,9 @@ export default function FriendRow({
         <Avatar size={36} />
         <C.TextContent>
           <C.Text>{name}</C.Text>
+          <C.IconContainer>
+            <C.Icon />
+          </C.IconContainer>
         </C.TextContent>
       </C.Content>
     </C.Container>
