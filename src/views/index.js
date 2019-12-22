@@ -7,6 +7,7 @@ import Friends from './Friends'
 import Camera from './Camera'
 import StartGame from './StartGame'
 import MyFriends from './MyFriends'
+import ConfirmPhotos from './ConfirmPhotos'
 // Import views here
 
 export {
@@ -19,5 +20,6 @@ export {
   Camera,
   StartGame,
   MyFriends,
+  ConfirmPhotos,
   // Insert views here
 }
