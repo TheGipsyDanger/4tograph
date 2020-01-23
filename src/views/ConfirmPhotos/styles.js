@@ -9,7 +9,7 @@ const Text = styled.Text`
   color: #fff;
   font-weight: bold;
 `
-const PhotoContent = styled.View`
+const PhotoContent = styled.TouchableOpacity.attrs({})`
   margin: 0 30px;
   margin-top: ${props => (props.top ? 88 : 24)}px;
   flex-direction: row;
@@ -17,7 +17,9 @@ const PhotoContent = styled.View`
   height: ${metrics.width / 2 - 40};
 `
 
-const PhotoDisplay = styled.View`
+const PhotoDisplay = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.6,
+})`
   width: ${metrics.width / 2 - 40};
   height: ${metrics.width / 2 - 40};
   background-color: red;

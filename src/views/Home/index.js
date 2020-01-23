@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { Bg, Button } from '../../components'
-import { actions } from '../../redux/actions'
+import actions, { Animation } from '../../redux/actions'
 import * as C from './styles'
 import LoginMenu from '../LoginMenu'
 import PropTypes from 'prop-types'
@@ -37,7 +37,4 @@ function Home({ toggleLoginModal }) {
   )
 }
 
-export default connect(
-  null,
-  { ...actions.Animation }
-)(Home)
+export default connect(null, { ...Animation })(Home)

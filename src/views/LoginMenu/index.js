@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Dimensions, Animated } from 'react-native'
-import { actions } from '../../redux/actions'
+import actions, { Animation, LoginRegister } from '../../redux/actions'
 import { connect } from 'react-redux'
 import { Input, Button } from '../../components'
 import * as C from './styles'
@@ -13,7 +13,7 @@ function LoginMenu({
   toggleLoginModal,
   type,
   signInRequest,
-  signUpRequest
+  signUpRequest,
 }) {
   // FIELDS
   const [email, setEmail] = useState('')
@@ -35,43 +35,43 @@ function LoginMenu({
       Animated.sequence([
         Animated.timing(opacity, {
           toValue: 1,
-          duration: 0
+          duration: 0,
         }),
         Animated.timing(top, {
           toValue: 0,
-          duration: 0
+          duration: 0,
         }),
         Animated.parallel([
           Animated.spring(topContent, {
-            toValue: 88
+            toValue: 88,
           }),
           Animated.spring(topIcon, {
-            toValue: 44
-          })
-        ])
+            toValue: 44,
+          }),
+        ]),
       ]).start()
     } else {
       Animated.sequence([
         Animated.parallel([
           Animated.timing(opacity, {
             toValue: 0,
-            duration: 0
+            duration: 0,
           }),
           Animated.timing(top, {
             toValue: height,
-            duration: 0
-          })
+            duration: 0,
+          }),
         ]),
         Animated.parallel([
           Animated.timing(topContent, {
             toValue: height,
-            duration: 400
+            duration: 400,
           }),
           Animated.timing(topIcon, {
             toValue: height,
-            duration: 400
-          })
-        ])
+            duration: 400,
+          }),
+        ]),
       ]).start()
     }
   }
@@ -169,16 +169,15 @@ function LoginMenu({
 }
 
 LoginMenu.defaultProps = {
-  type: 'SignIn'
+  type: 'SignIn',
 }
 
 LoginMenu.propTypes = {}
 
 const mapStateToProps = state => ({
-  showLoginModal: state.Animation.showLoginModal
+  showLoginModal: state.Animation.showLoginModal,
 })
 
-export default connect(
-  mapStateToProps,
-  { ...actions.Animation, ...actions.LoginRegister }
-)(LoginMenu)
+export default connect(mapStateToProps, { ...Animation, ...LoginRegister })(
+  LoginMenu
+)

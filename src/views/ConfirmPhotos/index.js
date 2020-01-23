@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import { actions } from '../../redux/actions'
-import { connect } from 'react-redux'
+import actions, { Animation } from '../../redux/actions'
 import { Scroll, Button } from '../../components'
+import { useSelector, useDispatch } from 'react-redux'
 import * as C from './styles'
 import PropTypes from 'prop-types'
 
 export default function ConfirmPhotos() {
+  const dispatch = useDispatch()
+
+  console.log('RENAN', Animation)
+
   return (
     <C.Container>
       <Scroll>

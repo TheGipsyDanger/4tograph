@@ -2,12 +2,12 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { actions } from '../../redux/actions'
 import { connect } from 'react-redux'
 import { CameraBottom } from '../../components'
+import { useSelector, useDispatch } from 'react-redux'
 import * as Permissions from 'expo-permissions'
 import * as C from './styles'
 import PropTypes from 'prop-types'
-import axios from 'axios'
 
-function Camera({ images }) {
+export default function Camera({ images }) {
   const [flashMode, setFlashMode] = useState(false)
   const [cameraType, setCameraType] = useState('back')
 
@@ -50,7 +50,7 @@ function Camera({ images }) {
 }
 
 Camera.navigationOptions = {
-  header: null
+  header: null,
 }
 
 Camera.defaultProps = {
@@ -58,16 +58,8 @@ Camera.defaultProps = {
     'https://pickaface.net/gallery/avatar/20141025_004121_918_Developer.png',
     'https://pickaface.net/gallery/avatar/20141025_004121_918_Developer.png',
     'https://pickaface.net/gallery/avatar/20141025_004121_918_Developer.png',
-    'https://pickaface.net/gallery/avatar/20141025_004121_918_Developer.png'
-  ]
+    'https://pickaface.net/gallery/avatar/20141025_004121_918_Developer.png',
+  ],
 }
 
 Camera.propTypes = {}
-
-const mapStateToProps = state => {
-  return {
-    initial: []
-  }
-}
-
-export default connect(mapStateToProps)(Camera)
