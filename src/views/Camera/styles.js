@@ -1,12 +1,16 @@
 import styled from 'styled-components/native'
 import {
   getBottomSpace,
-  getStatusBarHeight
+  getStatusBarHeight,
 } from 'react-native-iphone-x-helper'
 import { Camera } from 'expo-camera'
 
 const Container = styled.View`
   flex: 1;
+`
+const Content = styled.SafeAreaView`
+  flex: 1;
+  justify-content: space-between;
 `
 const Text = styled.Text`
   font-size: 60px;
@@ -17,10 +21,9 @@ const CustomCamera = styled(Camera).attrs(props => ({
   type: props.type,
   flashMode: props.flash
     ? Camera.Constants.FlashMode.torch
-    : Camera.Constants.FlashMode.off
+    : Camera.Constants.FlashMode.off,
 }))`
   flex: 1;
-  justify-content: space-between;
 `
 const Top = styled.View`
   align-items: flex-end;
@@ -31,4 +34,4 @@ const Bottom = styled.View`
   height: ${(getBottomSpace() + 60) * 2.5}px;
 `
 
-export { Container, Text, CustomCamera, Top, Bottom }
+export { Container, Content, Text, CustomCamera, Top, Bottom }

@@ -9,7 +9,8 @@ export default function ConfirmPhotos({ navigation }) {
   const dispatch = useDispatch()
   const cameraIndex = useSelector(state => state.CameraControl.cameraIndex)
 
-  goToCamera = index => {
+  function goToCamera(index) {
+    dispatch(CameraControl.changeStepCamera(false))
     dispatch(CameraControl.setIndexCamera(index))
     navigation.navigate('Camera')
   }
