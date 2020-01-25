@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback, useRef } from 'react'
 import { actions } from '../../redux/actions'
 import { connect } from 'react-redux'
 import { CameraBottom } from '../../components'
@@ -8,6 +8,8 @@ import * as C from './styles'
 import PropTypes from 'prop-types'
 
 export default function Camera({ images }) {
+  const refCamera = useRef(null)
+  const cameraIndex = useSelector(state => state.CameraControl.cameraIndex)
   const [flashMode, setFlashMode] = useState(false)
   const [cameraType, setCameraType] = useState('back')
 
@@ -25,15 +27,23 @@ export default function Camera({ images }) {
     setCameraType(cameraType == 'back' ? 'front' : 'back')
   })
 
-  const capture = useCallback(() => {
-    alert('foto tirada')
-  })
+  async function capture() {
+    const camera = refCamera.current
+    try {
+      let image = await camera.takePictureAsync({
+        quality: 1,
+        skipProcessing: true,
+      })
+    } catch (error) {
+      console.log('Error', error)
+    }
+  }
 
   return (
     <C.Container>
-      <C.CustomCamera flash={flashMode} type={cameraType}>
+      <C.CustomCamera ref={refCamera} flash={flashMode} type={cameraType}>
         <C.Top>
-          <C.Text>2</C.Text>
+          <C.Text>{cameraIndex}</C.Text>
         </C.Top>
         <C.Bottom>
           <CameraBottom

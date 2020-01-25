@@ -30,6 +30,15 @@ const INITIAL_STATE = {
 
 export default function CameraControl(state = INITIAL_STATE, action) {
   switch (action.type) {
+    case Types.SET_PHOTO_WITH_INDEX:
+      return {
+        ...state,
+      }
+    case Types.SET_INDEX_CAMERA:
+      return {
+        ...state,
+        cameraIndex: action.payload,
+      }
     default:
       return state
       break

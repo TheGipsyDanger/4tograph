@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 55443,
-  "expoServerNgrokUrl": "https://kv-pmp.altertecnologia.4tograph.exp.direct",
-  "packagerNgrokUrl": "https://packager.kv-pmp.altertecnologia.4tograph.exp.direct",
-  "ngrokPid": 55455,
+  "packagerPid": 77871,
+  "expoServerNgrokUrl": "https://kv-pmp.anonymous.4tograph.exp.direct",
+  "packagerNgrokUrl": "https://packager.kv-pmp.anonymous.4tograph.exp.direct",
+  "ngrokPid": 77881,
   "webpackServerPort": null
 }
