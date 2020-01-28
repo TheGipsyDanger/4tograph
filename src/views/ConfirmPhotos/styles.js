@@ -22,7 +22,20 @@ const PhotoDisplay = styled.TouchableOpacity.attrs({
 })`
   width: ${metrics.width / 2 - 40};
   height: ${metrics.width / 2 - 40};
-  background-color: red;
+  /* background-color: red; */
+`
+
+const Photo = styled.Image.attrs(props => ({
+  resizeMode: 'cover',
+  source: {
+    uri:
+      props.photo != ''
+        ? props.photo
+        : 'https://cdn4.iconfinder.com/data/icons/icons-for-lifestyle/154/smile-512.png',
+  },
+}))`
+  width: 100%;
+  height: 100%;
 `
 
 const ButtonContent = styled.View`
@@ -30,4 +43,4 @@ const ButtonContent = styled.View`
   margin-top: 20px;
 `
 
-export { Container, Text, PhotoContent, PhotoDisplay, ButtonContent }
+export { Container, Text, PhotoContent, PhotoDisplay, ButtonContent, Photo }

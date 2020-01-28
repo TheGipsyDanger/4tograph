@@ -39,6 +39,7 @@ export default function Camera({ images, navigation }) {
           quality: 1,
           skipProcessing: true,
         })
+        dispatch(CameraControl.saveCaptureImage(image.uri))
         affterCapture()
       } catch (error) {
         alert(error)
@@ -47,8 +48,9 @@ export default function Camera({ images, navigation }) {
   }
 
   function backToCheckView() {
+    dispatch(CameraControl.assignImage())
     dispatch(CameraControl.changeStepCamera(true))
-    navigation.goBack()
+    navigation.navigate('ConfirmPhotos')
   }
 
   function affterCapture() {

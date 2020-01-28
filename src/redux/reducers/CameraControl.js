@@ -4,6 +4,8 @@ export const Types = {
   SET_INDEX_CAMERA: 'CameraControl/SET_INDEX_CAMERA',
   SET_PHOTO_WITH_INDEX: 'CameraControl/SET_PHOTO_WITH_INDEX',
   CHANGE_STEP_CAMERA: 'CameraControl/CHANGE_STEP_CAMERA',
+  SAVE_CAPTURE_IMAGE: 'CameraControl/SAVE_CAPTURE_IMAGE',
+  ASSIGN_IMAGE: 'CameraControl/ASSIGN_IMAGE',
 }
 
 export const Actions = {
@@ -23,17 +25,45 @@ export const Actions = {
     }
   },
   changeStepCamera: status => {
-    console.log(status)
-
     return {
       type: Types.CHANGE_STEP_CAMERA,
       payload: status,
     }
   },
+  saveCaptureImage: image => {
+    return {
+      type: Types.SAVE_CAPTURE_IMAGE,
+      payload: image,
+    }
+  },
+  assignImage: () => {
+    return {
+      type: Types.ASSIGN_IMAGE,
+    }
+  },
 }
 
 const INITIAL_STATE = {
-  photos: [],
+  photos: [
+    {
+      id: 0,
+      photo: '',
+    },
+    {
+      id: 1,
+      photo: '',
+    },
+    {
+      id: 2,
+      photo:
+        'https://upload.wikimedia.org/wikipedia/commons/1/14/Mark_Zuckerberg_F8_2018_Keynote_%28cropped_2%29.jpg',
+    },
+    {
+      id: 3,
+      photo: '',
+    },
+  ],
+  currentPhoto: '',
   cameraIndex: 0,
   cameraInStartStep: true,
 }
@@ -53,6 +83,16 @@ export default function CameraControl(state = INITIAL_STATE, action) {
       return {
         ...state,
         cameraInStartStep: action.payload,
+      }
+    case Types.SAVE_CAPTURE_IMAGE:
+      return {
+        ...state,
+        currentPhoto: action.payload,
+      }
+    case Types.ASSIGN_IMAGE:
+      state.photos[state.cameraIndex].photo = state.currentPhoto
+      return {
+        ...state,
       }
     default:
       return state
