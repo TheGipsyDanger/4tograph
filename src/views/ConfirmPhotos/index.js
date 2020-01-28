@@ -7,7 +7,6 @@ import PropTypes from 'prop-types'
 
 export default function ConfirmPhotos({ navigation }) {
   const dispatch = useDispatch()
-  const teste = useSelector(state => state.CameraControl)
   const photos = useSelector(state => state.CameraControl.photos)
 
   function goToCamera(index) {

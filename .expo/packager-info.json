@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 83744,
-  "expoServerNgrokUrl": "https://wz-8cv.anonymous.4tograph.exp.direct",
-  "packagerNgrokUrl": "https://packager.wz-8cv.anonymous.4tograph.exp.direct",
-  "ngrokPid": 83760,
+  "packagerPid": 91120,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
   "webpackServerPort": null
 }

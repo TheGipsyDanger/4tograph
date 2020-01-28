@@ -55,8 +55,7 @@ const INITIAL_STATE = {
     },
     {
       id: 2,
-      photo:
-        'https://upload.wikimedia.org/wikipedia/commons/1/14/Mark_Zuckerberg_F8_2018_Keynote_%28cropped_2%29.jpg',
+      photo: '',
     },
     {
       id: 3,
