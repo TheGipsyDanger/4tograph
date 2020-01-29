@@ -8,6 +8,7 @@ import CameraBottom from './CameraBottom'
 import Avatar from './Avatar'
 import FriendList from './FriendList'
 import Scroll from './Scroll'
+import WordItem from './WordItem'
 // Import component here
 
 export {
@@ -21,5 +22,6 @@ export {
   Avatar,
   FriendList,
   Scroll,
+  WordItem,
   // Insert component here
 }
