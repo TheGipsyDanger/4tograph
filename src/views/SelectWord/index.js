@@ -7,7 +7,7 @@ import PropTypes from 'prop-types'
 
 export default function SelectWord() {
   const dispatch = useDispatch()
-  const example = useSelector(state => {})
+  const words = useSelector(state => state.Word.words)
 
   useEffect(() => {
     // componentDidMount
@@ -19,33 +19,35 @@ export default function SelectWord() {
   return (
     <Bg>
       <C.Container>
-        <WordItem currentWord={} />
-        <WordItem currentWord={} />
-        <WordItem currentWord={} />
+        <C.Content>
+          {words.map((currentWord, index) => (
+            <WordItem key={index} currentWord={currentWord} />
+          ))}
+        </C.Content>
       </C.Container>
     </Bg>
   )
 }
 
 SelectWord.navigationOptions = {
-  // header: null,
+  header: null,
 }
 
 SelectWord.defaultProps = {
   words: [
     {
       id: 0,
-      word: 'Text',
+      word: 'Barricada',
       type: 'Hard',
     },
     {
       id: 1,
-      word: 'Text',
+      word: 'Horizonte',
       type: 'Ok',
     },
     {
-      id: 0,
-      word: 'Text',
+      id: 2,
+      word: 'Sucesso',
       type: 'Easy',
     },
   ],

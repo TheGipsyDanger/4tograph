@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": 19004,
-  "packagerPid": 969,
+  "packagerPort": 19001,
+  "packagerPid": 24969,
   "expoServerNgrokUrl": "https://ez-69b.altertecnologia.4tograph.exp.direct",
   "packagerNgrokUrl": "https://packager.ez-69b.altertecnologia.4tograph.exp.direct",
-  "ngrokPid": 996,
+  "ngrokPid": 24980,
   "webpackServerPort": null
 }
