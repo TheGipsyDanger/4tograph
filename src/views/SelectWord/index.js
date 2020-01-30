@@ -23,6 +23,11 @@ export default function SelectWord() {
           {words.map((currentWord, index) => (
             <WordItem key={index} currentWord={currentWord} />
           ))}
+          <C.ResetButtonContent>
+            <C.ResetButton>
+              <C.Icon />
+            </C.ResetButton>
+          </C.ResetButtonContent>
         </C.Content>
       </C.Container>
     </Bg>
