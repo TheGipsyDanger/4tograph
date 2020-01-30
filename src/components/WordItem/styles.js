@@ -9,7 +9,7 @@ const Container = styled.View`
   justify-content: space-between;
   border-width: 4px;
   border-color: #979797;
-  border-radius: 5px;
+  border-radius: 1px;
   margin-bottom: 16px;
 `
 const WordContent = styled.View`
@@ -22,7 +22,7 @@ const TypeAndValueContent = styled.View`
 `
 
 const TypeAndValue = styled.Text`
-  font-size: 14px;
+  font-size: ${props => (props.value ? 14 : 18)}px;
   text-align: center;
   color: #034078;
   font-family: ${fonts.extraBold};

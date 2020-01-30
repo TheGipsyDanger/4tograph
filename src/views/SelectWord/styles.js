@@ -8,7 +8,7 @@ const Container = styled.View`
 `
 const Content = styled.View`
   width: ${metrics.width};
-  padding: 0px 40px;
+  padding: 0px 20px;
 `
 
 export { Container, Content }

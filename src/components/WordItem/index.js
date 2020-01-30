@@ -5,10 +5,10 @@ import PropTypes from 'prop-types'
 export default function WordItem({ currentWord: { word, type } }) {
   function defineScore(type) {
     switch (type) {
-      case 'hard':
+      case 'Hard':
         return '+5'
         break
-      case 'ok':
+      case 'Ok':
         return '+3'
         break
       default:
@@ -23,8 +23,8 @@ export default function WordItem({ currentWord: { word, type } }) {
         <C.Text>{word}</C.Text>
       </C.WordContent>
       <C.TypeAndValueContent>
-        <C.TypeAndValue>{type}</C.TypeAndValue>
-        <C.TypeAndValue>{defineScore(type)}</C.TypeAndValue>
+        <C.TypeAndValue value={false}>{type}</C.TypeAndValue>
+        <C.TypeAndValue value={true}>{defineScore(type)}</C.TypeAndValue>
       </C.TypeAndValueContent>
     </C.Container>
   )

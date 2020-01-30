@@ -46,8 +46,8 @@ const FriendsTopTabNavigator = createMaterialTopTabNavigator(
 
 const TabNavigator = createBottomTabNavigator(
   {
-    Friends: { screen: FriendsTopTabNavigator },
     Main: { screen: views.Main },
+    Friends: { screen: FriendsTopTabNavigator },
     Settings: { screen: views.Settings },
   },
   {
@@ -77,8 +77,8 @@ const AppNavigator = createStackNavigator(
   {
     // Home: { screen: views.Home, navigationOptions: { header: null } },
     SelectWord: { screen: views.SelectWord },
-    ConfirmPhotos: { screen: views.ConfirmPhotos },
     App: { screen: TabNavigator, navigationOptions: { header: null } },
+    ConfirmPhotos: { screen: views.ConfirmPhotos },
     Home: { screen: views.Home, navigationOptions: { header: null } },
     Tutorial: { screen: views.Tutorial, navigationOptions: { header: null } },
     Camera: { screen: views.Camera },
