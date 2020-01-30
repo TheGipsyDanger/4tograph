@@ -28,6 +28,7 @@ const ResetButton = styled.TouchableOpacity.attrs({
   width: 60px;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 `
 
 const Icon = styled(ICON).attrs({

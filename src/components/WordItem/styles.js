@@ -11,6 +11,7 @@ const Container = styled.View`
   border-color: #979797;
   border-radius: 1px;
   margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
 `
 const WordContent = styled.View`
   justify-content: center;

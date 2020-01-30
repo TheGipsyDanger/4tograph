@@ -8,17 +8,17 @@ const INITIAL_STATE = {
   words: [
     {
       id: 0,
-      word: 'Text',
+      word: 'Barricada',
       type: 'Hard',
     },
     {
       id: 1,
-      word: 'Text',
+      word: 'Horizonte',
       type: 'Ok',
     },
     {
-      id: 0,
-      word: 'Text',
+      id: 2,
+      word: 'Sucesso',
       type: 'Easy',
     },
   ],
