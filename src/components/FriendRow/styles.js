@@ -14,7 +14,6 @@ const Content = styled.View`
 
 const TextContent = styled.View`
   flex: 1;
-  background: red;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
@@ -33,7 +32,7 @@ const IconContainer = styled.TouchableOpacity``
 const Icon = styled(ICON).attrs({
   name: 'dots-vertical',
   size: 30,
-  color: '#ccc'
+  color: '#ccc',
 })``
 
 export { Container, Text, Content, TextContent, IconContainer, Icon }

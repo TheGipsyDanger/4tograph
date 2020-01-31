@@ -9,6 +9,7 @@ import Avatar from './Avatar'
 import FriendList from './FriendList'
 import Scroll from './Scroll'
 import WordItem from './WordItem'
+import Title from './Title'
 // Import component here
 
 export {
@@ -23,5 +24,6 @@ export {
   FriendList,
   Scroll,
   WordItem,
+  Title,
   // Insert component here
 }

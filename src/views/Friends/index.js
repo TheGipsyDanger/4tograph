@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Title } from '../../components'
 import { actions } from '../../redux/actions'
 import { connect } from 'react-redux'
 import * as C from './styles'
@@ -7,7 +8,7 @@ import PropTypes from 'prop-types'
 function Friends() {
   return (
     <C.Container>
-      <C.Text>Friends</C.Text>
+      <Title title={'Friends'} />
     </C.Container>
   )
 }
@@ -18,7 +19,7 @@ Friends.propTypes = {}
 
 const mapStateToProps = state => {
   return {
-    initial: []
+    initial: [],
   }
 }
 
