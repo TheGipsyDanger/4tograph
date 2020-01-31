@@ -76,7 +76,7 @@ const TabNavigator = createBottomTabNavigator(
 const AppNavigator = createStackNavigator(
   {
     // Home: { screen: views.Home, navigationOptions: { header: null } },
-    // Send: { screen: views.Send },
+    Send: { screen: views.Send },
     SelectWord: { screen: views.SelectWord },
     App: { screen: TabNavigator, navigationOptions: { header: null } },
     ConfirmPhotos: { screen: views.ConfirmPhotos },
