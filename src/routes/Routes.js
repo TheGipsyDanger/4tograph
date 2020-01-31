@@ -76,6 +76,7 @@ const TabNavigator = createBottomTabNavigator(
 const AppNavigator = createStackNavigator(
   {
     // Home: { screen: views.Home, navigationOptions: { header: null } },
+    // Send: { screen: views.Send },
     SelectWord: { screen: views.SelectWord },
     App: { screen: TabNavigator, navigationOptions: { header: null } },
     ConfirmPhotos: { screen: views.ConfirmPhotos },
@@ -86,6 +87,7 @@ const AppNavigator = createStackNavigator(
     StartGame: { screen: views.StartGame },
     MyFriends: { screen: views.MyFriends },
     ConfirmPhotos: { screen: views.ConfirmPhotos },
+    Send: { screen: views.Send },
     // Insert views here
     LoginMenu: { screen: views.LoginMenu },
   },

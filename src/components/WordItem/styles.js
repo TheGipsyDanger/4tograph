@@ -1,13 +1,17 @@
 import styled from 'styled-components/native'
+import { LinearGradient } from 'expo-linear-gradient'
 import { metrics, fonts } from '../../styles'
 
-const Container = styled.View`
+const Container = styled(LinearGradient).attrs({
+  colors: ['#F1F1F1', '#D8D8D8'],
+  start: { x: 0, y: 0.1 },
+  end: { x: 0, y: 1 },
+})`
   width: 100%;
   padding: 16px;
-  background: #d8d8d8;
   flex-direction: row;
   justify-content: space-between;
-  border-width: 4px;
+  border-width: 2px;
   border-color: #979797;
   border-radius: 1px;
   margin-bottom: 16px;
