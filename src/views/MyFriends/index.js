@@ -9,10 +9,10 @@ const friends = [
   { name: 'Renan' },
   { name: 'Henrique' },
   { name: 'Pedro' },
-  { name: 'Sônia' }
+  { name: 'Sônia' },
 ]
 
-function MyFriends() {
+export default function MyFriends() {
   return (
     <C.Container>
       <FriendList data={friends} title="My Friends" />
@@ -21,21 +21,13 @@ function MyFriends() {
 }
 
 MyFriends.navigationOptions = {
-  header: null
+  header: null,
 }
 
 MyFriends.defaultProps = {
-  myFriends: []
+  myFriends: [],
 }
 
 MyFriends.propTypes = {
-  myFriends: PropTypes.array.isRequired
+  myFriends: PropTypes.array.isRequired,
 }
-
-const mapStateToProps = state => {
-  return {
-    myFriends: []
-  }
-}
-
-export default connect(mapStateToProps)(MyFriends)
