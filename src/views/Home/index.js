@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Bg, Button } from '../../components'
 import actions, { Animation } from '../../redux/actions'
 import * as C from './styles'
@@ -7,12 +7,13 @@ import LoginMenu from '../LoginMenu'
 import PropTypes from 'prop-types'
 import passwordValidate from 'password-validate'
 
-function Home({ toggleLoginModal }) {
+export default function Home() {
+  const dispatch = useDispatch()
   const [type, setType] = useState('')
 
   function toggleModal(type) {
     setType(type)
-    toggleLoginModal()
+    dispatch(Animation.toggleLoginModal())
   }
 
   return (
@@ -36,5 +37,3 @@ function Home({ toggleLoginModal }) {
     </Bg>
   )
 }
-
-export default connect(null, { ...Animation })(Home)

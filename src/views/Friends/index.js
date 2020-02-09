@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import * as C from './styles'
 import PropTypes from 'prop-types'
 
-function Friends() {
+export default function Friends() {
   return (
     <C.Container>
       <Title title={'Friends'} />
@@ -16,11 +16,3 @@ function Friends() {
 Friends.defaultProps = {}
 
 Friends.propTypes = {}
-
-const mapStateToProps = state => {
-  return {
-    initial: [],
-  }
-}
-
-export default connect(mapStateToProps)(Friends)
