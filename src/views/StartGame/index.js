@@ -5,7 +5,7 @@ import { actions } from '../../redux/actions'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-function StartGame() {
+export default function StartGame() {
   function signIn() {}
 
   return (
@@ -27,17 +27,9 @@ function StartGame() {
 }
 
 StartGame.navigationOptions = {
-  header: null
+  header: null,
 }
 
 StartGame.defaultProps = {}
 
 StartGame.propTypes = {}
-
-const mapStateToProps = state => {
-  return {
-    initial: []
-  }
-}
-
-export default connect(mapStateToProps)(StartGame)
