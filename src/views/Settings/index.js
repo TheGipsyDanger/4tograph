@@ -4,7 +4,7 @@ import { actions } from '../../redux/actions'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-function Settings() {
+export default function Settings() {
   return (
     <C.Container>
       <C.Text>Settings</C.Text>
@@ -15,11 +15,3 @@ function Settings() {
 Settings.defaultProps = {}
 
 Settings.propTypes = {}
-
-const mapStateToProps = state => {
-  return {
-    initial: []
-  }
-}
-
-export default connect(mapStateToProps)(Settings)
