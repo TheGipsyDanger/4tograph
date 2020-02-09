@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import * as C from './styles'
 import PropTypes from 'prop-types'
 
-function Main() {
+export default function Main() {
   return (
     <C.Container>
       <C.Content>
@@ -28,11 +28,3 @@ function Main() {
 Main.defaultProps = {}
 
 Main.propTypes = {}
-
-const mapStateToProps = state => {
-  return {
-    initial: []
-  }
-}
-
-export default connect(mapStateToProps)(Main)
