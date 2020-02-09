@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { Dimensions, Animated } from 'react-native'
-import actions, { Animation, LoginRegister } from '../../redux/actions'
-import { connect } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { Input, Button } from '../../components'
 import * as C from './styles'
+import actions, { Animation, LoginRegister } from '../../redux/actions'
 import PropTypes from 'prop-types'
 
 const { height } = Dimensions.get('window')
 
-function LoginMenu({
-  showLoginModal,
-  toggleLoginModal,
-  type,
-  signInRequest,
-  signUpRequest,
-}) {
+export default function LoginMenu({ type }) {
+  // PROPS TO STATE
+  const showLoginModal = useSelector(state => state.Animation.showLoginModal)
+
+  // ACTIONS
+  const dispatch = useDispatch()
+
   // FIELDS
   const [email, setEmail] = useState('')
   const [username, setUsername] = useState('')
@@ -30,7 +30,7 @@ function LoginMenu({
     animationModal()
   }, [showLoginModal])
 
-  function animationModal() {
+  const animationModal = useCallback(() => {
     if (showLoginModal) {
       Animated.sequence([
         Animated.timing(opacity, {
@@ -74,13 +74,13 @@ function LoginMenu({
         ]),
       ]).start()
     }
-  }
+  })
 
   function toggleModal() {
     setEmail('')
     setUsername('')
     setPassword('')
-    toggleLoginModal()
+    dispatch(Animation.toggleLoginModal())
   }
 
   function renderLogin() {
@@ -146,11 +146,11 @@ function LoginMenu({
   }
 
   function signIn() {
-    signInRequest(email, password)
+    dispatch(LoginRegister.signInRequest(email, password))
   }
 
   function signUp() {
-    signUpRequest(username, email, password)
+    dispatch(LoginRegister.signUpRequest(username, email, password))
   }
 
   return (
@@ -172,12 +172,6 @@ LoginMenu.defaultProps = {
   type: 'SignIn',
 }
 
-LoginMenu.propTypes = {}
-
-const mapStateToProps = state => ({
-  showLoginModal: state.Animation.showLoginModal,
-})
-
-export default connect(mapStateToProps, { ...Animation, ...LoginRegister })(
-  LoginMenu
-)
+LoginMenu.propTypes = {
+  type: PropTypes.string,
+}
