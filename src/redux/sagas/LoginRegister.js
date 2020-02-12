@@ -9,11 +9,11 @@ export function* login({ payload: { email, password } }) {
   try {
     let resp = yield call(API.post, '/sessions', {
       email,
-      password
+      password,
     })
     yield put(UserActions.setUser(resp.data))
   } catch (err) {
-    console.log({ err })
+    navigate.console.log({ err })
   }
 }
 
@@ -22,7 +22,7 @@ export function* register({ payload: { username, email, password } }) {
     let resp = yield call(API.post, '/users', {
       username,
       email,
-      password
+      password,
     })
     yield put(UserActions.setUser(resp.data))
   } catch (err) {

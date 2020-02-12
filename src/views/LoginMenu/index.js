@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 import { Dimensions, Animated } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import { Input, Button } from '../../components'
+import { navigate } from '../../utils/navigation'
 import * as C from './styles'
 import actions, { Animation, LoginRegister } from '../../redux/actions'
 import PropTypes from 'prop-types'
@@ -30,51 +31,55 @@ export default function LoginMenu({ type }) {
     animationModal()
   }, [showLoginModal])
 
-  const animationModal = useCallback(() => {
-    if (showLoginModal) {
-      Animated.sequence([
-        Animated.timing(opacity, {
-          toValue: 1,
-          duration: 0,
+  const animationModal = useCallback(() =>
+    showLoginModal ? moveTop() : moveBottom()
+  )
+
+  function moveTop() {
+    Animated.sequence([
+      Animated.timing(opacity, {
+        toValue: 1,
+        duration: 0,
+      }),
+      Animated.timing(top, {
+        toValue: 0,
+        duration: 0,
+      }),
+      Animated.parallel([
+        Animated.spring(topContent, {
+          toValue: 88,
         }),
-        Animated.timing(top, {
+        Animated.spring(topIcon, {
+          toValue: 44,
+        }),
+      ]),
+    ]).start()
+  }
+
+  function moveBottom() {
+    Animated.sequence([
+      Animated.parallel([
+        Animated.timing(opacity, {
           toValue: 0,
           duration: 0,
         }),
-        Animated.parallel([
-          Animated.spring(topContent, {
-            toValue: 88,
-          }),
-          Animated.spring(topIcon, {
-            toValue: 44,
-          }),
-        ]),
-      ]).start()
-    } else {
-      Animated.sequence([
-        Animated.parallel([
-          Animated.timing(opacity, {
-            toValue: 0,
-            duration: 0,
-          }),
-          Animated.timing(top, {
-            toValue: height,
-            duration: 0,
-          }),
-        ]),
-        Animated.parallel([
-          Animated.timing(topContent, {
-            toValue: height,
-            duration: 400,
-          }),
-          Animated.timing(topIcon, {
-            toValue: height,
-            duration: 400,
-          }),
-        ]),
-      ]).start()
-    }
-  })
+        Animated.timing(top, {
+          toValue: height,
+          duration: 0,
+        }),
+      ]),
+      Animated.parallel([
+        Animated.timing(topContent, {
+          toValue: height,
+          duration: 400,
+        }),
+        Animated.timing(topIcon, {
+          toValue: height,
+          duration: 400,
+        }),
+      ]),
+    ]).start()
+  }
 
   function toggleModal() {
     setEmail('')
@@ -146,11 +151,13 @@ export default function LoginMenu({ type }) {
   }
 
   function signIn() {
-    dispatch(LoginRegister.signInRequest(email, password))
+    navigate('App')
+    // dispatch(LoginRegister.signInRequest(email, password))
   }
 
   function signUp() {
-    dispatch(LoginRegister.signUpRequest(username, email, password))
+    navigate('App')
+    // dispatch(LoginRegister.signUpRequest(username, email, password))
   }
 
   return (

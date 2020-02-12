@@ -10,7 +10,7 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      fontLoaded: false
+      fontLoaded: false,
     }
   }
 
@@ -18,7 +18,7 @@ export default class App extends Component {
     await Font.loadAsync({
       'open-sans-regular': require('./src/assets/fonts/OpenSans-Regular.ttf'),
       'open-sans-bold': require('./src/assets/fonts/OpenSans-Bold.ttf'),
-      'open-sans-extraBold': require('./src/assets/fonts/OpenSans-ExtraBold.ttf')
+      'open-sans-extraBold': require('./src/assets/fonts/OpenSans-ExtraBold.ttf'),
     })
     this.setState({ fontLoaded: true })
   }
@@ -28,7 +28,7 @@ export default class App extends Component {
       <>
         {this.state.fontLoaded ? (
           <Provider store={store}>
-            <Routes />
+            <Routes ref={setNavigator} />
           </Provider>
         ) : (
           <View />
