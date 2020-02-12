@@ -52,8 +52,8 @@ const FriendsTopTabNavigator = createMaterialTopTabNavigator(
 
 const TabNavigator = createBottomTabNavigator(
   {
-    Main: { screen: views.Main },
     Friends: { screen: FriendsTopTabNavigator },
+    Main: { screen: views.Main },
     Settings: { screen: views.Settings },
   },
   {

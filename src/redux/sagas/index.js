@@ -4,6 +4,7 @@ import { Types as LoginRegister } from '../reducers/LoginRegister'
 import { Types as User } from '../reducers/User'
 import { Types as CameraControl } from '../reducers/CameraControl'
 import { Types as Word } from '../reducers/Word'
+import { Types as Modal } from '../reducers/Modal'
 // Import action types
 
 import { login, register } from './LoginRegister'

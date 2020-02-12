@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { View } from 'react-native'
 import { Provider } from 'react-redux'
+import { ModalController } from './src/components'
 import { setNavigator } from './src/utils/navigation'
+import ModalContext from './src/utils/ModalContext'
 import Routes from './src/routes/Routes'
 import store from './src/redux/store'
 import * as Font from 'expo-font'
@@ -11,7 +13,13 @@ export default class App extends Component {
     super(props)
     this.state = {
       fontLoaded: false,
+      modalType: 'default',
+      showModal: false,
     }
+  }
+
+  setModal(modalType, showModal) {
+    this.setState({ modalType, showModal })
   }
 
   async componentDidMount() {
@@ -24,12 +32,22 @@ export default class App extends Component {
   }
 
   render() {
+    const { modalType, showModal } = this.state
     return (
       <>
         {this.state.fontLoaded ? (
-          <Provider store={store}>
-            <Routes ref={setNavigator} />
-          </Provider>
+          <ModalContext.Provider
+            value={{
+              modalType: modalType,
+              showModal: showModal,
+              toggleModal: (modalType, showModal) =>
+                this.setModal(modalType, showModal),
+            }}>
+            <Provider store={store}>
+              <Routes ref={setNavigator} />
+              <ModalController />
+            </Provider>
+          </ModalContext.Provider>
         ) : (
           <View />
         )}

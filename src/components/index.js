@@ -10,6 +10,9 @@ import FriendList from './FriendList'
 import Scroll from './Scroll'
 import WordItem from './WordItem'
 import Title from './Title'
+import FriendsModal from './FriendsModal'
+import ModalController from './ModalController'
+import CloseModalButton from './CloseModalButton'
 // Import component here
 
 export {
@@ -25,5 +28,8 @@ export {
   Scroll,
   WordItem,
   Title,
+  FriendsModal,
+  ModalController,
+  CloseModalButton,
   // Insert component here
 }

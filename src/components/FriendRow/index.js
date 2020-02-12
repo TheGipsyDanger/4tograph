@@ -6,8 +6,8 @@ import PropTypes from 'prop-types'
 export default function FriendRow({
   name,
   listType,
-  firstAction,
-  secondAction
+  openOptions,
+  secondAction,
 }) {
   return (
     <C.Container>
@@ -15,7 +15,7 @@ export default function FriendRow({
         <Avatar size={36} />
         <C.TextContent>
           <C.Text>{name}</C.Text>
-          <C.IconContainer>
+          <C.IconContainer onPress={() => openOptions()}>
             <C.Icon />
           </C.IconContainer>
         </C.TextContent>
@@ -27,13 +27,13 @@ export default function FriendRow({
 FriendRow.defaultProps = {
   name: '',
   listType: '',
-  firstAction: () => {},
-  secondAction: () => {}
+  openOptions: () => {},
+  secondAction: () => {},
 }
 
 FriendRow.propTypes = {
   name: PropTypes.string.isRequired,
   listType: PropTypes.string.isRequired,
-  firstAction: PropTypes.func.isRequired,
-  secondAction: PropTypes.func.isRequired
+  openOptions: PropTypes.func.isRequired,
+  secondAction: PropTypes.func.isRequired,
 }
