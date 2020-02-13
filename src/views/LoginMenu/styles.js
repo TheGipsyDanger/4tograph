@@ -1,15 +1,14 @@
 import styled from 'styled-components/native'
-import { Animated, Dimensions } from 'react-native'
 import ICON from 'react-native-vector-icons/MaterialCommunityIcons'
-
-const { width, height } = Dimensions.get('window')
+import { Animated, Dimensions } from 'react-native'
+import { metrics, colors } from '../../styles'
 
 const Container = styled(Animated.View)`
   position: absolute;
   flex: 1;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: ${colors.opacity};
   z-index: 5;
 `
 const Content = styled(Animated.View)`
@@ -18,16 +17,16 @@ const Content = styled(Animated.View)`
   width: 100%;
   height: 100%;
   background: #fff;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  border-top-right-radius: ${metrics.spacing(2)}px;
+  border-top-left-radius: ${metrics.spacing(2)}px;
   z-index: 10;
 `
 const Body = styled.View`
-  height: ${height - 88}px;
-  margin: 30px;
+  height: ${metrics.height - 88}px;
+  margin: ${metrics.spacing(4)}px;
 `
 const Distribution = styled.View`
-  margin-bottom: 20px;
+  margin-bottom: ${metrics.spacing(3)}px;
 `
 const IconContainer = styled(Animated.View)`
   position: absolute;
@@ -37,12 +36,12 @@ const IconContainer = styled(Animated.View)`
   margin-left: -22px;
 `
 const IconButton = styled.TouchableOpacity.attrs({
-  hitSlop: { top: 10, bottom: 10, left: 10, right: 10 }
+  hitSlop: { top: 10, bottom: 10, left: 10, right: 10 },
 })``
 const Icon = styled(ICON).attrs({
   size: 44,
   color: 'white',
-  name: 'chevron-down'
+  name: 'chevron-down',
 })``
 const Text = styled.Text`
   font-family: avenir;
@@ -58,5 +57,5 @@ export {
   IconContainer,
   IconButton,
   Icon,
-  Text
+  Text,
 }

@@ -3,6 +3,7 @@ import {
   getBottomSpace,
   getStatusBarHeight,
 } from 'react-native-iphone-x-helper'
+import { colors, metrics } from '../../styles'
 import { Camera } from 'expo-camera'
 
 const Container = styled.View`
@@ -14,7 +15,7 @@ const Content = styled.SafeAreaView`
 `
 const Text = styled.Text`
   font-size: 60px;
-  color: #fff;
+  color: ${colors.white};
   font-weight: bold;
 `
 const CustomCamera = styled(Camera).attrs(props => ({
@@ -28,7 +29,7 @@ const CustomCamera = styled(Camera).attrs(props => ({
 const Top = styled.View`
   align-items: flex-end;
   /* margin-top: ${getStatusBarHeight()}px; */
-  margin-right: 32px;
+  margin-right: ${metrics.spacing(4)};
 `
 const Bottom = styled.View`
   height: ${(getBottomSpace() + 60) * 2.5}px;

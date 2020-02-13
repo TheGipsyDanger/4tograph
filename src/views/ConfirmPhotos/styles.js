@@ -1,16 +1,16 @@
 import styled from 'styled-components/native'
-import { metrics } from '../../styles'
+import { metrics, colors } from '../../styles'
 
 const Container = styled.View`
   flex: 1;
 `
 const Text = styled.Text`
   font-size: 18px;
-  color: #fff;
+  color: ${colors.white};
   font-weight: bold;
 `
 const PhotoContent = styled.TouchableOpacity.attrs({})`
-  margin: 0 30px;
+  margin: 0 ${metrics.spacing(4)}px;
   margin-top: ${props => (props.top ? 88 : 24)}px;
   flex-direction: row;
   justify-content: space-between;
@@ -39,8 +39,8 @@ const Photo = styled.Image.attrs(props => ({
 `
 
 const ButtonContent = styled.View`
-  margin: 0 30px;
-  margin-top: 20px;
+  margin: 0 ${metrics.spacing(4)}px;
+  margin-top: ${metrics.spacing(3)}px;
 `
 
 export { Container, Text, PhotoContent, PhotoDisplay, ButtonContent, Photo }

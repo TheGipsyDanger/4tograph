@@ -1,19 +1,17 @@
-import { Dimensions, Animated } from 'react-native'
-import { getBottomSpace } from 'react-native-iphone-x-helper'
 import styled from 'styled-components/native'
 import Logo from '../../assets/Logo-min.png'
-
-const { width, height } = Dimensions.get('window')
+import { metrics, colors } from '../../styles'
+import { getBottomSpace } from 'react-native-iphone-x-helper'
 
 const Container = styled.View`
-  height: ${height}px;
+  height: ${metrics.height}px;
   justify-content: flex-end;
 `
 const Scroll = styled.ScrollView.attrs({
   containerContentStyle: {
     flex: 1,
-    justifyContent: 'flex-end'
-  }
+    justifyContent: 'flex-end',
+  },
 })`
   flex: 1;
 `
@@ -26,16 +24,16 @@ const Body = styled.View`
 `
 const Image = styled.Image.attrs({
   resizeMode: 'contain',
-  source: Logo
+  source: Logo,
 })`
   width: 260px;
   height: 180px;
 `
 const ButtonContent = styled.View`
-  margin: ${getBottomSpace()}px 30px;
   margin-top: 0;
 `
 const Distribution = styled.View`
+  margin: ${getBottomSpace()}px 30px;
   margin-bottom: 20px;
 `
 

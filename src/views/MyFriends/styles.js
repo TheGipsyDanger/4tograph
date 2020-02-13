@@ -1,8 +1,9 @@
 import styled from 'styled-components/native'
+import { metrics, colors } from '../../styles'
 
 const Container = styled.View`
   flex: 1;
-  background: #fff;
+  background: ${colors.white};
 `
 
 const Text = styled.Text`
@@ -12,13 +13,13 @@ const Text = styled.Text`
 `
 
 const List = styled.FlatList.attrs({
-  contentContainerStyle: { paddingTop: 24 }
+  contentContainerStyle: { paddingTop: 24 },
 })``
 
 const Separator = styled.View`
-  height: 44px;
+  height: ${metrics.spacing(6)}px;
   border-bottom-width: ${1 / 2}px;
-  border-color: #cccccc;
+  border-color: ${colors.grey};
 `
 
 export { Container, Text, List, Separator }

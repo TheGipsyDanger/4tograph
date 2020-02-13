@@ -2,16 +2,16 @@ import styled from 'styled-components/native'
 import BG from '../../assets/BG.png'
 import LOGO from '../../assets/Logo-min.png'
 import { View } from 'react-native-animatable'
-import { fonts } from '../../styles'
+import { fonts, colors, metrics } from '../../styles'
 
 const Container = styled.ImageBackground.attrs({
-  source: BG
+  source: BG,
 })`
   flex: 1;
-  background: #034078;
+  background: ${colors.primary};
 `
 const Item = styled(View).attrs({
-  animation: 'fadeInUp'
+  animation: 'fadeInUp',
 })`
   flex: 1;
   justify-content: center;
@@ -21,7 +21,7 @@ const Inciator = styled.View`
   justify-content: center;
 `
 const LogoContainer = styled(View).attrs({
-  animation: 'fadeInDown'
+  animation: 'fadeInDown',
 })`
   position: absolute;
   top: 50%;
@@ -31,7 +31,7 @@ const LogoContainer = styled(View).attrs({
 `
 const Logo = styled.Image.attrs({
   source: LOGO,
-  resizeMode: 'contain'
+  resizeMode: 'contain',
 })`
   width: 130px;
   height: 43px;
@@ -83,5 +83,5 @@ export {
   TextContainer,
   Title,
   Subtext,
-  ButtonCircle
+  ButtonCircle,
 }
