@@ -1,11 +1,11 @@
 import styled from 'styled-components/native'
-import { fonts } from '../../styles'
+import { fonts, colors } from '../../styles'
 
 const Container = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.6
+  activeOpacity: 0.6,
 })`
   height: 55px;
-  background: ${props => (props.confirm ? '#2A9D8F' : '#FFF')};
+  background: ${props => (props.confirm ? colors.confirm : colors.white)};
   border-radius: 5px;
   align-items: center;
   justify-content: center;
@@ -13,7 +13,7 @@ const Container = styled.TouchableOpacity.attrs({
 const Text = styled.Text`
   font-family: ${props => (props.confirm ? fonts.bold : fonts.regular)};
   font-size: 22px;
-  color: ${props => (props.confirm ? '#fff' : '#6d7278')};
+  color: ${props => (props.confirm ? colors.white : colors.grey)};
   text-transform: uppercase;
 `
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components/native'
-import { fonts } from '../../styles'
+import { fonts, colors, metrics } from '../../styles'
 import ICON from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const Container = styled.View`
@@ -9,7 +9,7 @@ const Container = styled.View`
 
 const Content = styled.View`
   flex-direction: row;
-  margin-left: 16px;
+  margin-left: ${metrics.spacing(2)};
 `
 
 const TextContent = styled.View`
@@ -21,8 +21,8 @@ const TextContent = styled.View`
 
 const Text = styled.Text`
   font-size: 14px;
-  color: #034078;
-  margin-left: 16px;
+  color: ${colors.primary};
+  margin-left: ${metrics.spacing(2)};
   font-family: ${fonts.bold};
   text-transform: capitalize;
 `

@@ -1,15 +1,15 @@
 import styled from 'styled-components/native'
-import { fonts } from '../../styles'
+import { fonts, colors, metrics } from '../../styles'
 
 const Container = styled.View``
 const TextInput = styled.TextInput.attrs(props => ({
   placeholder: props.placeholder,
-  placeholderTextColor: '#eeeeee',
+  placeholderTextColor: `#eeeeee`,
   autoCapitalize: 'none',
-  autoCorrect: false
+  autoCorrect: false,
 }))`
   border-radius: 5px;
-  height: 55px;
+  height: ${metrics.spacing(8)};
   border-width: 3px;
   border-color: #eeeeee;
   color: #ccc;

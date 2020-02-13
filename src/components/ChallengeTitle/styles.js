@@ -1,14 +1,14 @@
 import styled from 'styled-components/native'
 import { LinearGradient } from 'expo-linear-gradient'
-import { fonts } from '../../styles'
+import { fonts, colors, metrics } from '../../styles'
 
 const ContainerOne = styled(LinearGradient).attrs({
   colors: ['#FFD69A', '#F89300'],
   start: { x: 0, y: 0.1 },
-  end: { x: 0, y: 1 }
+  end: { x: 0, y: 1 },
 })`
   flex: 1;
-  height: 36px;
+  height: ${metrics.spacing(4)};
   align-items: center;
   justify-content: center;
   border-width: 1px;
@@ -16,7 +16,6 @@ const ContainerOne = styled(LinearGradient).attrs({
 `
 const TitleOne = styled.Text`
   font-size: 16px;
-  /* color: #fff; */
   color: #9b5c00;
   font-family: ${fonts.bold};
   text-transform: uppercase;
@@ -24,18 +23,18 @@ const TitleOne = styled.Text`
 const ContainerTwo = styled(LinearGradient).attrs({
   colors: ['#E1ECEF', '#7F888A'],
   start: { x: 0, y: 0 },
-  end: { x: 0, y: 1 }
+  end: { x: 0, y: 1 },
 })`
   flex: 1;
   height: 36px;
   align-items: center;
   justify-content: center;
   border-width: ${0.5}px;
-  border-color: #848c8e;
+  border-color: ${colors.darkGrey};
 `
 const TitleTwo = styled.Text`
   font-size: 16px;
-  color: #fff;
+  color: ${colors.white};
   font-family: ${fonts.bold};
   text-transform: uppercase;
 `

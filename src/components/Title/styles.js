@@ -1,11 +1,11 @@
 import styled from 'styled-components/native'
-import { fonts } from '../../styles'
+import { fonts, colors, metrics } from '../../styles'
 
 const Title = styled.Text`
   font-size: 18px;
-  color: #034078;
+  color: ${colors.primary};
   font-family: ${fonts.bold};
-  margin: 24px 16px;
+  margin: ${metrics.spacing(3)}px ${metrics.spacing(2)}px;
 `
 
 export { Title }

@@ -1,9 +1,10 @@
 import styled from 'styled-components/native'
 import {
   getBottomSpace,
-  getStatusBarHeight
+  getStatusBarHeight,
 } from 'react-native-iphone-x-helper'
 import ICON from '@expo/vector-icons/MaterialIcons'
+import { colors } from '../../styles'
 
 const Container = styled.View`
   flex: 1;
@@ -22,7 +23,7 @@ const CameraButton = styled.View`
   width: 60px;
   background: white;
   border-radius: 30px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 2px 4px ${colors.opacity};
 `
 
 const FirstLine = styled.View`
@@ -32,14 +33,14 @@ const FirstLine = styled.View`
 
 const SecondLine = styled.View`
   height: 60px;
-  background: rgba(0, 0, 0, 0.6);
+  background: ${colors.opacity};
   flex-direction: row;
   padding-top: 4px;
   justify-content: space-around;
 `
 
 const Button = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.6
+  activeOpacity: 0.6,
 })`
   flex: 1;
   justify-content: center;
@@ -54,7 +55,7 @@ const Image = styled.Image`
 const Icon = styled(ICON).attrs(props => ({
   name: props.name,
   size: 30,
-  color: 'white'
+  color: 'white',
 }))``
 
 export {
@@ -65,5 +66,5 @@ export {
   Button,
   CameraButtonContainer,
   CameraButton,
-  Icon
+  Icon,
 }

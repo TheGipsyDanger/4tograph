@@ -1,5 +1,5 @@
 import styled from 'styled-components/native'
-import { fonts } from '../../styles'
+import { fonts, colors, metrics } from '../../styles'
 
 const Container = styled.View`
   flex: 1;
@@ -7,17 +7,17 @@ const Container = styled.View`
 
 const Title = styled.Text`
   font-size: 18px;
-  color: #034078;
+  color: ${colors.primary};
   font-family: ${fonts.bold};
-  margin: 24px 16px;
+  margin: ${metrics.spacing(3)}px ${metrics.spacing(2)}px;
 `
 
 const List = styled.FlatList.attrs({})``
 
 const Separator = styled.View`
-  height: 44px;
+  height: ${metrics.spacing(6)}px;
   border-bottom-width: ${1 / 2}px;
-  border-color: #cccccc;
+  border-color: ${colors.grey};
 `
 
 export { Container, Title, List, Separator }

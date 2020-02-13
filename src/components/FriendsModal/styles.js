@@ -1,12 +1,12 @@
 import styled from 'styled-components/native'
 import { Animated } from 'react-native'
-import { metrics } from '../../styles'
+import { metrics, colors } from '../../styles'
 import { getBottomSpace } from 'react-native-iphone-x-helper'
 
 const Bg = styled(Animated.View)`
   height: ${metrics.height};
   width: ${metrics.width};
-  background: rgba(0, 0, 0, 0.6);
+  background: ${colors.opacity}
   z-index: 5;
   position: absolute;
 `
@@ -18,9 +18,9 @@ const Container = styled(Animated.View)`
   position: absolute;
 `
 const Content = styled.View`
-  background: white;
-  padding: 16px;
-  padding-bottom: ${getBottomSpace()};
+  background: ${colors.white};
+  padding: ${metrics.spacing(2)}px;
+  padding-bottom: ${getBottomSpace()}px;
 `
 const Button = styled.View`
   justify-content: center;
@@ -28,7 +28,6 @@ const Button = styled.View`
 `
 const Text = styled.Text`
   font-size: 18px;
-  color: #fff;
   color: red;
   font-weight: bold;
 `
