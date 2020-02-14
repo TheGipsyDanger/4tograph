@@ -22,7 +22,7 @@ const ResetButtonContent = styled.View`
 const ResetButton = styled.TouchableOpacity.attrs({
   activeOpacity: 0.6,
 })`
-  background: ${colors.grey};
+  background: ${colors.white};
   border-radius: ${metrics.spacing(4)}px;
   height: 60px;
   width: 60px;

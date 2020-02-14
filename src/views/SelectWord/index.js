@@ -35,7 +35,7 @@ export default function SelectWord() {
 }
 
 SelectWord.navigationOptions = {
-  header: null,
+  // header: null,
 }
 
 SelectWord.defaultProps = {

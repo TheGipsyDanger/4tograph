@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { AntDesign } from 'react-native-vector-icons'
+import { navigate } from '../../utils/navigation'
 import * as C from './styles'
 import PropTypes from 'prop-types'
 
 export default function DefaultRow({ type }) {
   return (
-    <C.Container>
+    <C.Container onPress={() => navigate('SelectWord')}>
       {type == 'create' ? (
         <AntDesign
           name={'plus'}
@@ -22,9 +23,9 @@ export default function DefaultRow({ type }) {
 }
 
 DefaultRow.defaultProps = {
-  type: 'create'
+  type: 'create',
 }
 
 DefaultRow.propTypes = {
-  type: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired,
 }

@@ -25,6 +25,10 @@ export default function Main() {
   )
 }
 
+Main.navigationOptions = {
+  header: null,
+}
+
 Main.defaultProps = {}
 
 Main.propTypes = {}

@@ -8,13 +8,13 @@ const Container = styled(LinearGradient).attrs({
   end: { x: 0, y: 1 },
 })`
   width: 100%;
-  padding: ${metrics.spacing(2)};
+  padding: ${metrics.spacing(2)}px;
   flex-direction: row;
   justify-content: space-between;
   border-width: 2px;
   border-color: #979797;
   border-radius: 1px;
-  margin-bottom: ${metrics.spacing(2)};
+  margin-bottom: ${metrics.spacing(2)}px;
   box-shadow: 0 2px 4px ${colors.opacity};
 `
 const WordContent = styled.View`
