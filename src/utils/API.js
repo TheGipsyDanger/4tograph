@@ -1,9 +1,9 @@
 import axios from 'axios'
-import { storeAsyncToken, getAsyncToken } from './token'
+import { getAsyncToken } from './storage'
 import { API_URL } from '../configs/constants'
 
 const API = axios.create({
-  baseURL: API_URL
+  baseURL: API_URL,
 })
 
 const setUserToken = token => {
@@ -28,10 +28,6 @@ API.defaults.headers.get['Accept'] = '*/*'
 
 API.interceptors.response.use(
   response => {
-    const { config, data } = response
-    if (checkUrl(config.url)) {
-      setUserToken(data.token.token)
-    }
     return response
   },
   error => {
@@ -41,9 +37,10 @@ API.interceptors.response.use(
 
 API.interceptors.request.use(
   async config => {
-    if (!checkUrl(config.url)) {
-      const token = await getUserToken()
-      config.headers.Authorization = `Bearer ${token}`
+    let token = await getAsyncToken()
+    config.headers = {
+      'X-User-Email': 'renan@email.com',
+      'X-User-Token': token,
     }
     return config
   },
