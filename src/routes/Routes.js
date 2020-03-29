@@ -24,12 +24,6 @@ const FriendsTopTabNavigator = createMaterialTopTabNavigator(
         return { title: 'Other users' }
       },
     },
-    // MyFriends: {
-    //   screen: views.MyFriends,
-    //   navigationOptions: ({ navigation }) => {
-    //     return { title: 'My Friends' }
-    //   },
-    // },
   },
   {
     lazy: true,
@@ -79,27 +73,29 @@ const TabNavigator = createBottomTabNavigator(
   }
 )
 
+const loginNavigator = createStackNavigator({
+  // Tutorial: { screen: views.Tutorial, navigationOptions: { header: null } },
+  Home: { screen: views.Home, navigationOptions: { header: null } },
+})
+
 const AppNavigator = createStackNavigator(
   {
-    // Home: { screen: views.Home, navigationOptions: { header: null } },
-    Home: { screen: views.Home, navigationOptions: { header: null } },
     App: { screen: TabNavigator, navigationOptions: { header: null } },
     Send: { screen: views.Send },
     SelectWord: { screen: views.SelectWord },
     ConfirmPhotos: { screen: views.ConfirmPhotos },
-    Tutorial: { screen: views.Tutorial, navigationOptions: { header: null } },
     Camera: { screen: views.Camera },
     Settings: { screen: views.Settings },
     StartGame: { screen: views.StartGame },
     MyFriends: { screen: views.MyFriends },
     ConfirmPhotos: { screen: views.ConfirmPhotos },
     Send: { screen: views.Send },
-    // Insert views here
     LoginMenu: { screen: views.LoginMenu },
+    // Insert views here
   },
   {
     mode: 'modal',
   }
 )
 
-export default createAppContainer(AppNavigator)
+export default createAppContainer(loginNavigator)

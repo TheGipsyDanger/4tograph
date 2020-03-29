@@ -12,6 +12,7 @@ const { height } = Dimensions.get('window')
 export default function LoginMenu({ type }) {
   // PROPS TO STATE
   const showLoginModal = useSelector(state => state.Animation.showLoginModal)
+  const { is_loading } = useSelector(state => state.Loading)
 
   // ACTIONS
   const dispatch = useDispatch()
@@ -109,7 +110,12 @@ export default function LoginMenu({ type }) {
           />
         </C.Distribution>
         <C.Distribution>
-          <Button press={signIn} title={'ENTRAR'} confirm={true} />
+          <Button
+            press={signIn}
+            is_loading={is_loading}
+            title={'ENTRAR'}
+            confirm={true}
+          />
         </C.Distribution>
       </>
     )
@@ -144,20 +150,23 @@ export default function LoginMenu({ type }) {
           />
         </C.Distribution>
         <C.Distribution>
-          <Button press={signUp} title={'CADASTRAR E ENTRAR'} confirm={true} />
+          <Button
+            press={signUp}
+            is_loading={is_loading}
+            title={'CADASTRAR E ENTRAR'}
+            confirm={true}
+          />
         </C.Distribution>
       </>
     )
   }
 
   function signIn() {
-    navigate('App')
-    // dispatch(LoginRegister.signInRequest(email, password))
+    dispatch(LoginRegister.signInRequest(email, password))
   }
 
   function signUp() {
-    navigate('App')
-    // dispatch(LoginRegister.signUpRequest(username, email, password))
+    dispatch(LoginRegister.signUpRequest(username, email, password))
   }
 
   return (

@@ -4,6 +4,7 @@ import { Actions as User } from '../reducers/User'
 import { Actions as CameraControl } from '../reducers/CameraControl'
 import { Actions as Word } from '../reducers/Word'
 import { Actions as Modal } from '../reducers/Modal'
+import { Actions as Loading } from '../reducers/Loading'
 // Import actions here
 export {
   Animation,
@@ -12,5 +13,6 @@ export {
   CameraControl,
   Word,
   Modal,
+  Loading,
   // Insert actions here
 }

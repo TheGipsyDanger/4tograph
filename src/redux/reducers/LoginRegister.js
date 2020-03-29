@@ -3,7 +3,7 @@ import axios from 'axios'
 export const Types = {
   SIGN_IN_REQUEST: 'loginRegister/SIGN_IN_REQUEST',
   SIGN_UP_REQUEST: 'loginRegister/SIGN_UP_REQUEST',
-  SIGN_IN: 'loginRegister/SIGN_IN'
+  SIGN_IN: 'loginRegister/SIGN_IN',
 }
 
 export const Actions = {
@@ -12,28 +12,28 @@ export const Actions = {
       type: Types.SIGN_IN_REQUEST,
       payload: {
         email,
-        password
-      }
+        password,
+      },
     }
   },
-  signUpRequest: (username, email, password) => {
+  signUpRequest: (name, email, password) => {
     return {
       type: Types.SIGN_UP_REQUEST,
       payload: {
-        username,
+        name,
         email,
-        password
-      }
+        password,
+      },
     }
   },
   signIn: user => {
     return {
       type: Types.SIGN_IN,
       payload: {
-        user
-      }
+        user,
+      },
     }
-  }
+  },
 }
 
 const INITIAL_STATE = {}

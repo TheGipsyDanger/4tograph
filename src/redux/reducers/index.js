@@ -6,6 +6,7 @@ import User from './User'
 import CameraControl from './CameraControl'
 import Word from './Word'
 import Modal from './Modal'
+import Loading from './Loading'
 // Import redux here
 
 export default combineReducers({
@@ -16,5 +17,6 @@ export default combineReducers({
   CameraControl,
   Word,
   Modal,
+  Loading,
   // Insert redux here
 });
