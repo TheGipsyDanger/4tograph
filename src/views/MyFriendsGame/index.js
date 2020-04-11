@@ -12,7 +12,7 @@ const friends = [
   { name: 'Sônia' },
 ]
 
-export default function MyFriends() {
+export default function MyFriendsGames() {
   return (
     <C.Container>
       <FriendList data={friends} title="My Friends" />
@@ -20,14 +20,14 @@ export default function MyFriends() {
   )
 }
 
-MyFriends.navigationOptions = {
-  // header: null,
+MyFriendsGames.navigationOptions = {
+  header: null,
 }
 
-MyFriends.defaultProps = {
+MyFriendsGames.defaultProps = {
   myFriends: [],
 }
 
-MyFriends.propTypes = {
+MyFriendsGames.propTypes = {
   myFriends: PropTypes.array.isRequired,
 }

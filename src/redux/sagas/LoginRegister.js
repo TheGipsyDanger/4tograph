@@ -19,6 +19,7 @@ export function* login({ payload: { email, password } }) {
     yield storage.storeAsyncToken(data.authentication_token)
     yield put(UserActions.setUser(data))
     yield put(LoadingActions.setIsLoading(false))
+    navigate('App')
   } catch (err) {
     console.log('Error no login', err)
     yield put(LoadingActions.setIsLoading(false))

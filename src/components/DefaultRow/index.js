@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 
 export default function DefaultRow({ type }) {
   return (
-    <C.Container onPress={() => navigate('SelectWord')}>
+    <C.Container onPress={() => navigate('createGame')}>
       {type == 'create' ? (
         <AntDesign
           name={'plus'}

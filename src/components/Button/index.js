@@ -6,7 +6,10 @@ import PropTypes from 'prop-types'
 
 const Button = ({ title, press, confirm, is_loading }) => {
   return (
-    <C.Container confirm={confirm} onPress={() => press()}>
+    <C.Container
+      confirm={confirm}
+      onPress={() => press()}
+      disabled={is_loading}>
       {!is_loading ? (
         <C.Text confirm={confirm}>{title}</C.Text>
       ) : (

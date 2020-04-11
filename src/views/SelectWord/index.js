@@ -1,30 +1,41 @@
 import React, { useState, useEffect } from 'react'
 import * as C from './styles'
-import { actions } from '../../redux/actions'
+import actions, { Word, CreateGame } from '../../redux/actions'
 import { Bg, WordItem } from '../../components'
 import { useSelector, useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 
-export default function SelectWord() {
+export default function SelectWord({ navigation }) {
   const dispatch = useDispatch()
   const words = useSelector(state => state.Word.words)
 
   useEffect(() => {
-    // componentDidMount
-    return () => {
-      //component willUnmount
-    }
+    getWords()
+    return () => {}
   }, [])
+
+  function getWords() {
+    dispatch(Word.getWordsRequest())
+  }
+
+  function setWordAndNavigate(currentWord) {
+    dispatch(CreateGame.setWord(currentWord))
+    navigation.navigate('MyFriendsGame')
+  }
 
   return (
     <Bg>
       <C.Container>
         <C.Content>
           {words.map((currentWord, index) => (
-            <WordItem key={index} currentWord={currentWord} />
+            <WordItem
+              key={index}
+              currentWord={currentWord}
+              press={setWordAndNavigate}
+            />
           ))}
           <C.ResetButtonContent>
-            <C.ResetButton>
+            <C.ResetButton onPress={getWords}>
               <C.Icon />
             </C.ResetButton>
           </C.ResetButtonContent>
@@ -35,27 +46,11 @@ export default function SelectWord() {
 }
 
 SelectWord.navigationOptions = {
-  // header: null,
+  header: null,
 }
 
 SelectWord.defaultProps = {
-  words: [
-    {
-      id: 0,
-      word: 'Barricada',
-      type: 'Hard',
-    },
-    {
-      id: 1,
-      word: 'Horizonte',
-      type: 'Ok',
-    },
-    {
-      id: 2,
-      word: 'Sucesso',
-      type: 'Easy',
-    },
-  ],
+  words: [],
 }
 
 SelectWord.propTypes = {

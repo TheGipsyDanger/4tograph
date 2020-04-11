@@ -7,6 +7,7 @@ import CameraControl from './CameraControl'
 import Word from './Word'
 import Modal from './Modal'
 import Loading from './Loading'
+import CreateGame from './CreateGame'
 // Import redux here
 
 export default combineReducers({
@@ -18,5 +19,6 @@ export default combineReducers({
   Word,
   Modal,
   Loading,
+  CreateGame,
   // Insert redux here
 });

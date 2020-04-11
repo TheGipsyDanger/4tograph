@@ -13,6 +13,7 @@ import Title from './Title'
 import FriendsModal from './FriendsModal'
 import ModalController from './ModalController'
 import CloseModalButton from './CloseModalButton'
+import Header from './Header'
 // Import component here
 
 export {
@@ -31,5 +32,6 @@ export {
   FriendsModal,
   ModalController,
   CloseModalButton,
+  Header,
   // Insert component here
 }

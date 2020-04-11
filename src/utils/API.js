@@ -40,7 +40,7 @@ API.interceptors.request.use(
     let token = await getAsyncToken()
     config.headers = {
       'X-User-Email': 'renan@email.com',
-      'X-User-Token': token,
+      'X-User-Token': 'Y9Ks2DzxyZ9WHicMx3sa',
     }
     return config
   },

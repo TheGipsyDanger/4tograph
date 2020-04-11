@@ -1,5 +1,7 @@
 import React from 'react'
 import * as views from '../views'
+import Header from '../components/Header'
+import routesName from './routesNames.json'
 import { fonts } from '../styles'
 import { Octicons } from 'react-native-vector-icons'
 import { createStackNavigator } from 'react-navigation-stack'
@@ -74,23 +76,43 @@ const TabNavigator = createBottomTabNavigator(
 )
 
 const loginNavigator = createStackNavigator({
-  // Tutorial: { screen: views.Tutorial, navigationOptions: { header: null } },
+  Tutorial: { screen: views.Tutorial, navigationOptions: { header: null } },
   Home: { screen: views.Home, navigationOptions: { header: null } },
 })
+
+const createGameNavigator = createStackNavigator({
+  SelectWord: {
+    screen: views.SelectWord,
+  },
+  MyFriendsGame: {
+    screen: views.MyFriendsGame,
+  },
+})
+
+createGameNavigator.navigationOptions = ({ navigation }) => {
+  const { routeName } = navigation.state.routes[navigation.state.index]
+  return {
+    header: <Header title={routesName[routeName]} />,
+  }
+}
 
 const AppNavigator = createStackNavigator(
   {
     App: { screen: TabNavigator, navigationOptions: { header: null } },
+    Login: { screen: loginNavigator, navigationOptions: { header: null } },
+    createGame: {
+      screen: createGameNavigator,
+    },
+    StartGame: { screen: views.StartGame },
     Send: { screen: views.Send },
-    SelectWord: { screen: views.SelectWord },
     ConfirmPhotos: { screen: views.ConfirmPhotos },
     Camera: { screen: views.Camera },
     Settings: { screen: views.Settings },
-    StartGame: { screen: views.StartGame },
     MyFriends: { screen: views.MyFriends },
     ConfirmPhotos: { screen: views.ConfirmPhotos },
     Send: { screen: views.Send },
     LoginMenu: { screen: views.LoginMenu },
+    MyFriendsGame: { screen: views.MyFriendsGame },
     // Insert views here
   },
   {
@@ -98,4 +120,4 @@ const AppNavigator = createStackNavigator(
   }
 )
 
-export default createAppContainer(loginNavigator)
+export default createAppContainer(AppNavigator)
