@@ -80,29 +80,36 @@ const loginNavigator = createStackNavigator({
   Home: { screen: views.Home, navigationOptions: { header: null } },
 })
 
-const createGameNavigator = createStackNavigator({
-  SelectWord: {
-    screen: views.SelectWord,
+const createGameNavigator = createStackNavigator(
+  {
+    SelectWord: {
+      screen: views.SelectWord,
+      navigationOptions: { header: null },
+    },
+    MyFriendsGame: {
+      screen: views.MyFriendsGame,
+      navigationOptions: { header: null },
+    },
   },
-  MyFriendsGame: {
-    screen: views.MyFriendsGame,
-  },
-})
-
-createGameNavigator.navigationOptions = ({ navigation }) => {
-  const { routeName } = navigation.state.routes[navigation.state.index]
-  return {
-    header: <Header title={routesName[routeName]} />,
+  {
+    navigationOptions: ({ navigation }) => {
+      const { routeName } = navigation.state.routes[navigation.state.index]
+      return {
+        header: <Header title={routesName[routeName]} />,
+      }
+    },
   }
-}
+)
 
 const AppNavigator = createStackNavigator(
   {
+    MyFriendsGame: {
+      screen: views.MyFriendsGame,
+      navigationOptions: { header: null },
+    },
     App: { screen: TabNavigator, navigationOptions: { header: null } },
     Login: { screen: loginNavigator, navigationOptions: { header: null } },
-    createGame: {
-      screen: createGameNavigator,
-    },
+    createGame: { screen: createGameNavigator },
     StartGame: { screen: views.StartGame },
     Send: { screen: views.Send },
     ConfirmPhotos: { screen: views.ConfirmPhotos },

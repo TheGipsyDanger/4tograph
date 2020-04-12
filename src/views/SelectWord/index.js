@@ -45,10 +45,6 @@ export default function SelectWord({ navigation }) {
   )
 }
 
-SelectWord.navigationOptions = {
-  header: null,
-}
-
 SelectWord.defaultProps = {
   words: [],
 }

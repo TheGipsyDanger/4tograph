@@ -10,7 +10,7 @@ const Content = styled.ScrollView.attrs({
   },
 })`
   flex: 1;
-  margin: 0px ${metrics.spacing(3)}px;
+  margin: 0px ${metrics.spacing(2)}px;
 `
 const Separate = styled.View`
   margin-top: ${metrics.spacing(3)}px;

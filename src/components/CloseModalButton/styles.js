@@ -13,11 +13,13 @@ const Container = styled.TouchableOpacity.attrs({
   justify-content: center;
   align-items: center;
 `
+
 const Text = styled.Text`
   font-size: 32px;
   color: ${colors.white};
   font-weight: bold;
 `
+
 const Icon = styled(ICON).attrs(props => ({
   name: 'close',
   size: 30,

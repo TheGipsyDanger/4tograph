@@ -8,6 +8,7 @@ import Word from './Word'
 import Modal from './Modal'
 import Loading from './Loading'
 import CreateGame from './CreateGame'
+import Friends from './Friends'
 // Import redux here
 
 export default combineReducers({
@@ -20,5 +21,6 @@ export default combineReducers({
   Modal,
   Loading,
   CreateGame,
+  Friends,
   // Insert redux here
 });

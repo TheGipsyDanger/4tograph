@@ -1,27 +1,23 @@
 import React, { useState, useEffect } from 'react'
-import * as C from './styles'
+import actions, { Friends as FriendsActions } from '../../redux/actions'
 import { FriendList } from '../../components'
-import { actions } from '../../redux/actions'
-import { connect } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
-
-const friends = [
-  { name: 'Renan' },
-  { name: 'Henrique' },
-  { name: 'Pedro' },
-  { name: 'Sônia' },
-]
+import * as C from './styles'
 
 export default function MyFriendsGames() {
+  const dispatch = useDispatch()
+  const { searchMyFriends, myFriends, searchTerm } = useSelector(
+    state => state.Friends
+  )
+
+  const currentList = searchTerm != '' ? searchMyFriends : myFriends
+
   return (
     <C.Container>
-      <FriendList data={friends} title="My Friends" />
+      <FriendList data={currentList} type={'StartGame'} title="My Friends" />
     </C.Container>
   )
-}
-
-MyFriendsGames.navigationOptions = {
-  header: null,
 }
 
 MyFriendsGames.defaultProps = {

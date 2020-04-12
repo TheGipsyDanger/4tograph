@@ -14,6 +14,7 @@ import FriendsModal from './FriendsModal'
 import ModalController from './ModalController'
 import CloseModalButton from './CloseModalButton'
 import Header from './Header'
+import SearchOnList from './SearchOnList'
 // Import component here
 
 export {
@@ -33,5 +34,6 @@ export {
   ModalController,
   CloseModalButton,
   Header,
+  SearchOnList,
   // Insert component here
 }

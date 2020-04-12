@@ -1,4 +1,12 @@
-const componentExists = require('./src/utils/componentExists')
+const {
+  viewExists,
+  componentExists,
+  getNavigators,
+  navigatorExists,
+  navigatorExistsForViews,
+  reduxExists,
+} = require('./src/utils/componentExists')
+
 module.exports = plop => {
   plop.setGenerator('View', {
     description: 'Create a new View',
@@ -8,7 +16,7 @@ module.exports = plop => {
         name: 'type',
         message: 'With redux?',
         default: 'Yes',
-        choices: () => ['Yes', 'No']
+        choices: () => ['Yes', 'No'],
       },
       {
         type: 'input',
@@ -17,13 +25,13 @@ module.exports = plop => {
         default: 'Home View',
         validate: value => {
           if (/.+/.test(value)) {
-            return componentExists(value)
+            return viewExists(value)
               ? 'A component or container with this name already exists'
               : true
           }
           return 'The name is required'
-        }
-      }
+        },
+      },
     ],
     actions: data => {
       let path = 'src/views/{{pascalCase name}}/index.js'
@@ -43,35 +51,35 @@ module.exports = plop => {
         {
           type: 'add',
           path: path,
-          templateFile: componentTemplate
+          templateFile: componentTemplate,
         },
         {
           type: 'add',
           path: pathStyles,
-          templateFile: componentTemplateStyles
+          templateFile: componentTemplateStyles,
         },
         {
           type: 'modify',
           path: pathIndex,
           pattern: patternImport,
-          templateFile: componentTemplateImport
+          templateFile: componentTemplateImport,
         },
         {
           type: 'modify',
           path: pathIndex,
           pattern: patternInsert,
-          templateFile: componentTemplateInsert
+          templateFile: componentTemplateInsert,
         },
         {
           type: 'modify',
           path: 'src/routes/Routes.js',
           pattern: patternInsert,
-          templateFile: './__templates__/common/insertViewRoutes.hbs'
-        }
+          templateFile: './__templates__/common/insertViewRoutes.hbs',
+        },
       ]
 
       return actions
-    }
+    },
   })
   plop.setGenerator('Function View', {
     description: 'Create a new Function View',
@@ -81,7 +89,7 @@ module.exports = plop => {
         name: 'type',
         message: 'With redux?',
         default: 'Yes',
-        choices: () => ['Yes', 'No']
+        choices: () => ['Yes', 'No'],
       },
       {
         type: 'input',
@@ -90,13 +98,13 @@ module.exports = plop => {
         default: 'Home View',
         validate: value => {
           if (/.+/.test(value)) {
-            return componentExists(value)
+            return viewExists(value)
               ? 'A component or container with this name already exists'
               : true
           }
           return 'The name is required'
-        }
-      }
+        },
+      },
     ],
     actions: data => {
       let path = 'src/views/{{pascalCase name}}/index.js'
@@ -116,35 +124,35 @@ module.exports = plop => {
         {
           type: 'add',
           path: path,
-          templateFile: componentTemplate
+          templateFile: componentTemplate,
         },
         {
           type: 'add',
           path: pathStyles,
-          templateFile: componentTemplateStyles
+          templateFile: componentTemplateStyles,
         },
         {
           type: 'modify',
           path: pathIndex,
           pattern: patternImport,
-          templateFile: componentTemplateImport
+          templateFile: componentTemplateImport,
         },
         {
           type: 'modify',
           path: pathIndex,
           pattern: patternInsert,
-          templateFile: componentTemplateInsert
+          templateFile: componentTemplateInsert,
         },
         {
           type: 'modify',
           path: 'src/routes/Routes.js',
           pattern: patternInsert,
-          templateFile: './__templates__/common/insertViewRoutes.hbs'
-        }
+          templateFile: './__templates__/common/insertViewRoutes.hbs',
+        },
       ]
 
       return actions
-    }
+    },
   })
   plop.setGenerator('Component', {
     description: 'Create a new Component',
@@ -154,7 +162,7 @@ module.exports = plop => {
         name: 'type',
         message: 'Select the type of component',
         default: 'Class Component',
-        choices: () => ['Class Component', 'Stateless Component']
+        choices: () => ['Class Component', 'Stateless Component'],
       },
       {
         type: 'input',
@@ -168,8 +176,8 @@ module.exports = plop => {
               : true
           }
           return 'The name is required'
-        }
-      }
+        },
+      },
     ],
     actions: data => {
       let componentTemplate =
@@ -189,29 +197,29 @@ module.exports = plop => {
         {
           type: 'add',
           path: path,
-          templateFile: componentTemplate
+          templateFile: componentTemplate,
         },
         {
           type: 'add',
           path: pathStyles,
-          templateFile: componentTemplateStyles
+          templateFile: componentTemplateStyles,
         },
         {
           type: 'modify',
           path: pathIndex,
           pattern: patternImport,
-          templateFile: componentTemplateImport
+          templateFile: componentTemplateImport,
         },
         {
           type: 'modify',
           path: pathIndex,
           pattern: patternInsert,
-          templateFile: componentTemplateInsert
-        }
+          templateFile: componentTemplateInsert,
+        },
       ]
 
       return actions
-    }
+    },
   })
   plop.setGenerator('Redux', {
     description: 'Create a new Redux',
@@ -223,59 +231,59 @@ module.exports = plop => {
         default: 'PesonRedux',
         validate: value => {
           if (/.+/.test(value)) {
-            return componentExists(value)
+            return reduxExists(value)
               ? 'A component or container with this name already exists'
               : true
           }
           return 'The name is required'
-        }
-      }
+        },
+      },
     ],
     actions: () => {
       const actions = [
         {
           type: 'add',
           path: 'src/redux/reducers/{{pascalCase name}}.js',
-          templateFile: './__templates__/redux/reduce.js.hbs'
+          templateFile: './__templates__/redux/reduce.js.hbs',
         },
         {
           type: 'add',
           path: 'src/redux/sagas/{{pascalCase name}}.js',
-          templateFile: './__templates__/redux/saga.js.hbs'
+          templateFile: './__templates__/redux/saga.js.hbs',
         },
         {
           type: 'modify',
           path: 'src/redux/reducers/index.js',
           pattern: /\/\/ Import redux here\n/g,
-          templateFile: './__templates__/redux/importRedux.hbs'
+          templateFile: './__templates__/redux/importRedux.hbs',
         },
         {
           type: 'modify',
           path: 'src/redux/reducers/index.js',
           pattern: /\/\/ Insert redux here\n/g,
-          templateFile: './__templates__/redux/insertRedux.hbs'
+          templateFile: './__templates__/redux/insertRedux.hbs',
         },
         {
           type: 'modify',
           path: 'src/redux/actions/index.js',
           pattern: /\/\/ Import actions here\n/g,
-          templateFile: './__templates__/redux/importActions.hbs'
+          templateFile: './__templates__/redux/importActions.hbs',
         },
         {
           type: 'modify',
           path: 'src/redux/actions/index.js',
           pattern: /\/\/ Insert actions here\n/g,
-          templateFile: './__templates__/redux/insertActions.hbs'
+          templateFile: './__templates__/redux/insertActions.hbs',
         },
         {
           type: 'modify',
           path: 'src/redux/sagas/index.js',
           pattern: /\/\/ Import action types\n/g,
-          templateFile: './__templates__/redux/importActionsTypes.hbs'
-        }
+          templateFile: './__templates__/redux/importActionsTypes.hbs',
+        },
       ]
 
       return actions
-    }
+    },
   })
 }

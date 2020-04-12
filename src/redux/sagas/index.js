@@ -7,6 +7,7 @@ import { Types as Word } from '../reducers/Word'
 import { Types as Modal } from '../reducers/Modal'
 import { Types as Loading } from '../reducers/Loading'
 import { Types as CreateGame } from '../reducers/CreateGame'
+import { Types as Friends } from '../reducers/Friends'
 // Import action types
 
 import { login, register } from './LoginRegister'
