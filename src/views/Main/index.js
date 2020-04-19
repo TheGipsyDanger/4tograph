@@ -13,6 +13,8 @@ export default function Main() {
         <C.Separate>
           <ChallengeTitle isMy={true} />
           <ChallengeRow />
+          <ChallengeRow />
+          <ChallengeRow />
         </C.Separate>
         <C.Separate>
           <ChallengeTitle isMy={false} />

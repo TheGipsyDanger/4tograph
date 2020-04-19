@@ -11,7 +11,7 @@ const Content = styled.ScrollView.attrs({
   },
 })`
   flex: 1;
-  padding: 0px ${metrics.spacing(3)}px;
+  padding: 0px ${metrics.spacing(2)}px;
 `
 const ResetButtonContent = styled.View`
   flex: 1;
