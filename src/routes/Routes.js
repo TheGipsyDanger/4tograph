@@ -103,13 +103,13 @@ const createGameNavigator = createStackNavigator(
 
 const AppNavigator = createStackNavigator(
   {
+    createGame: { screen: createGameNavigator },
     MyFriendsGame: {
       screen: views.MyFriendsGame,
       navigationOptions: { header: null },
     },
     App: { screen: TabNavigator, navigationOptions: { header: null } },
     Login: { screen: loginNavigator, navigationOptions: { header: null } },
-    createGame: { screen: createGameNavigator },
     StartGame: { screen: views.StartGame },
     Send: { screen: views.Send },
     ConfirmPhotos: { screen: views.ConfirmPhotos },

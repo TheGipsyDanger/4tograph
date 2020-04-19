@@ -2,20 +2,16 @@ import styled from 'styled-components/native'
 import { LinearGradient } from 'expo-linear-gradient'
 import { metrics, fonts, colors } from '../../styles'
 
-const Content = styled(LinearGradient).attrs({
-  colors: ['#F1F1F1', '#D8D8D8'],
-  start: { x: 0, y: 0.1 },
-  end: { x: 0, y: 1 },
-})`
+const Content = styled.View`
   width: 100%;
   padding: ${metrics.spacing(2)}px;
   border-width: 2px;
   flex-direction: row;
   justify-content: space-between;
-  border-color: #979797;
+  border-color: ${colors.primary};
   border-radius: 1px;
+  background: white;
   margin-bottom: ${metrics.spacing(2)}px;
-  box-shadow: 0 2px 4px ${colors.opacity};
 `
 
 const Container = styled.TouchableOpacity.attrs({
