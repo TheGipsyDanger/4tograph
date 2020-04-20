@@ -38,6 +38,7 @@
     "react-native-iphone-x-helper": "latest",
     "react-native-reanimated": "latest",
     "react-native-screens": "latest",
+    "react-native-shimmer-placeholder": "https://github.com/tomzaku/react-native-shimmer-placeholder.git#expo",
     "react-native-web": "^0.11.7",
     "react-navigation": "latest",
     "react-navigation-stack": "latest",

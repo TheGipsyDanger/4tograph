@@ -7,6 +7,7 @@ export default function FriendRow({
   name,
   listType,
   openOptions,
+  type,
   secondAction,
 }) {
   return (
@@ -15,9 +16,11 @@ export default function FriendRow({
         <Avatar size={36} />
         <C.TextContent>
           <C.Text>{name}</C.Text>
-          <C.IconContainer onPress={() => openOptions()}>
-            <C.Icon />
-          </C.IconContainer>
+          {type == 'default' && (
+            <C.IconContainer onPress={() => openOptions()}>
+              <C.Icon />
+            </C.IconContainer>
+          )}
         </C.TextContent>
       </C.Content>
     </C.Container>
@@ -27,6 +30,7 @@ export default function FriendRow({
 FriendRow.defaultProps = {
   name: '',
   listType: '',
+  type: 'default',
   openOptions: () => {},
   secondAction: () => {},
 }
@@ -34,6 +38,7 @@ FriendRow.defaultProps = {
 FriendRow.propTypes = {
   name: PropTypes.string.isRequired,
   listType: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
   openOptions: PropTypes.func.isRequired,
   secondAction: PropTypes.func.isRequired,
 }

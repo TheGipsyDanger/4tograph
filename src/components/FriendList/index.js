@@ -32,7 +32,11 @@ export default function FriendList({ data, title, type }) {
         }
         renderItem={({ item: friend }) => (
           <C.Separator>
-            <FriendRow name={friend.name} openOptions={showOptions} />
+            <FriendRow
+              name={friend.name}
+              openOptions={showOptions}
+              type={type}
+            />
           </C.Separator>
         )}
         keyExtractor={(item, index) => String(index)}

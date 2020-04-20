@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import * as C from './styles'
-import actions, { Word, CreateGame } from '../../redux/actions'
 import { WordItem } from '../../components'
 import { useSelector, useDispatch } from 'react-redux'
+import actions, { Word, CreateGame } from '../../redux/actions'
+import * as C from './styles'
+import ShimmerPlaceHolder from 'react-native-shimmer-placeholder'
 import PropTypes from 'prop-types'
 
 export default function SelectWord({ navigation }) {
