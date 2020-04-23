@@ -7,15 +7,25 @@ import * as C from './styles'
 
 export default function MyFriendsGames() {
   const dispatch = useDispatch()
+
   const { searchMyFriends, myFriends, searchTerm } = useSelector(
     state => state.Friends
   )
 
   const currentList = searchTerm != '' ? searchMyFriends : myFriends
 
+  function selectedFriendAndNavigate(friend = []) {
+    alert(JSON.stringify(friend))
+  }
+
   return (
     <C.Container>
-      <FriendList data={currentList} type={'StartGame'} title="My Friends" />
+      <FriendList
+        data={currentList}
+        type={'StartGame'}
+        title="My Friends"
+        pressRow={selectedFriendAndNavigate}
+      />
     </C.Container>
   )
 }

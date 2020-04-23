@@ -7,6 +7,11 @@ const Container = styled.View`
   justify-content: center;
 `
 
+const PressContainer = styled.TouchableOpacity`
+  flex: 1;
+  justify-content: center;
+`
+
 const Content = styled.View`
   flex-direction: row;
   margin-left: ${metrics.spacing(2)};
@@ -35,4 +40,12 @@ const Icon = styled(ICON).attrs({
   color: '#ccc',
 })``
 
-export { Container, Text, Content, TextContent, IconContainer, Icon }
+export {
+  Container,
+  Text,
+  Content,
+  TextContent,
+  IconContainer,
+  Icon,
+  PressContainer,
+}

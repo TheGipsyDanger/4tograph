@@ -7,7 +7,7 @@ import SearchOnList from '../SearchOnList'
 import PropTypes from 'prop-types'
 import * as C from './styles'
 
-export default function FriendList({ data, title, type }) {
+export default function FriendList({ data, title, type, pressRow }) {
   const { toggleModal } = useContext(ModalContext)
   const dispatch = useDispatch()
 
@@ -33,9 +33,11 @@ export default function FriendList({ data, title, type }) {
         renderItem={({ item: friend }) => (
           <C.Separator>
             <FriendRow
+              friend={friend}
               name={friend.name}
               openOptions={showOptions}
               type={type}
+              press={pressRow}
             />
           </C.Separator>
         )}
@@ -52,11 +54,13 @@ FriendList.defaultProps = {
     },
   ],
   type: 'default',
+  pressRow: () => {},
   // title: ''
 }
 
 FriendList.propTypes = {
   data: PropTypes.array.isRequired,
   type: PropTypes.string.isRequired,
+  pressRow: PropTypes.func.isRequired,
   // title: PropTypes.String.isRequired
 }
