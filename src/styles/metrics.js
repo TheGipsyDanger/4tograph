@@ -8,7 +8,7 @@ const spacing = (x = 1) => {
 }
 
 export default {
-  header: isIphoneX() ? Header.HEIGHT + getStatusBarHeight() : Header.HEIGHT,
+  header: isIphoneX() ? Header.HEIGHT + getStatusBarHeight() : Header.HEIGHT,,
   height: height,
   width: width,
   spacing: spacing,
