@@ -17,8 +17,30 @@ export const Actions = {
   },
 }
 
+// const INITIAL_STATE = {
+//   words: [
+
+//   ],
+// }
+
 const INITIAL_STATE = {
-  words: [],
+  words: [
+    {
+      id: 46,
+      type: 'hard',
+      word: 'palavra 45',
+    },
+    {
+      id: 68,
+      type: 'ok',
+      word: 'palavra 67',
+    },
+    {
+      id: 84,
+      type: 'easy',
+      word: 'palavra 83',
+    },
+  ],
 }
 
 export default function Word(state = INITIAL_STATE, action) {
